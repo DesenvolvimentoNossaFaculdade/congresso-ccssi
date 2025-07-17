@@ -12,6 +12,7 @@ module.exports = {
                 'primary-dark': '#5F4235',
                 'accent-yellow': '#FCCD9A',
                 'brand-orange': '#C05621',
+                'background-light-orange': '#F5D1A5'
             },
         },
     },

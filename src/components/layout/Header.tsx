@@ -69,7 +69,7 @@ export default function Header() {
                     alt="Logo do CCSI 2025"
                     width={40} 
                     height={40}
-                    className="h-10 w-auto" 
+                    className="h-auto w-20" 
                     priority 
                     />
                 )}

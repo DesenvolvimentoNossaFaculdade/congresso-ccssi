@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Evento from './Evento';
 
 interface BannerProps{
     imageUrl?: string;
@@ -10,7 +11,7 @@ interface BannerProps{
 }
 
 export default function Banner({
-    imageUrl = '/images/bannersite.png',
+    imageUrl = '/images/logo_com_subtitulo.png',
     altText = "Banner do congresso CSSI - Semana de TDAH",
     title = "Congresso CSSI",
     subtitle = "Semana de Conscientização sobre TDAH",
@@ -22,11 +23,10 @@ export default function Banner({
             <Image
                 src={imageUrl}
                 alt={altText}
-                fill
-                priority
-                className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                loading="eager" //!Carregando a imagem imediatamente.
+                width={856}
+                height={856}
+                className="w-200 h-150 object-contain drop-shadow-xl rounded-lg px-20"
+                loading="lazy"
             />
         </section>
     )

@@ -5,10 +5,10 @@ import React from 'react';
 import { Sparkles } from 'lucide-react';
 
 interface HeadlineLoopProps {
-  texts?: string[];
-  speed?: 'slow' | 'normal' | 'fast';
-  customDuration?: string;
-  showSparkles?: boolean;
+    texts?: string[];
+    speed?: 'slow' | 'normal' | 'fast';
+    customDuration?: string;
+    showSparkles?: boolean;
 }
 
 export default function HeadlineHorizontalLoop({
@@ -34,11 +34,11 @@ export default function HeadlineHorizontalLoop({
         aria-label="Manchetes em loop horizontal"
         >
         <div
-            className={`flex items-center whitespace-nowrap text-accent-yellow font-bold text-base sm:text-lg md:text-xl lg:text-2xl animate-scrollLoop`}
+            className={`flex items-center whitespace-nowrap text-orange font-bold text-base sm:text-lg md:text-xl lg:text-2xl animate-scrollLoop`}
         >
             {duplicatedTexts.map((text, index) => (
-                <span key={index} className="flex flex-shrink-0 items-center mx-3 sm:mx-6 text-brand-orange">
-                    {showSparkles && <Sparkles className="w-4 h-4 mr-2 text-brand-orange" aria-hidden="true" />}
+                <span key={index} className="flex flex-shrink-0 items-center mx-3 sm:mx-6 text-orange-100">
+                    {showSparkles && <Sparkles className="w-4 h-4 mr-2 text-orange" aria-hidden="true" />}
                     {text.toUpperCase()}
                 </span>
             ))}
