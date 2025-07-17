@@ -1,4 +1,3 @@
-// src/app/api/sections/[id]/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 
@@ -8,7 +7,6 @@ interface Context {
   params: { id: string };
 }
 
-// Lida com GET /api/sections/:id (Buscar seção por ID)
 export async function GET(request: NextRequest, context: Context) {
   try {
     const id = parseInt(context.params.id);
@@ -28,7 +26,6 @@ export async function GET(request: NextRequest, context: Context) {
   }
 }
 
-// Lida com PUT /api/sections/:id (Atualizar seção por ID)
 export async function PUT(request: NextRequest, context: Context) {
   try {
     const id = parseInt(context.params.id);
@@ -61,7 +58,6 @@ export async function PUT(request: NextRequest, context: Context) {
   }
 }
 
-// Lida com DELETE /api/sections/:id (Deletar seção por ID)
 export async function DELETE(request: NextRequest, context: Context) {
   try {
     const id = parseInt(context.params.id);

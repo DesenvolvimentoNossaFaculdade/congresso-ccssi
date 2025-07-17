@@ -1,14 +1,12 @@
-// src/app/api/events/[id]/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 
-export const runtime = 'nodejs'; // Garante ambiente Node.js
+export const runtime = 'nodejs';
 
 interface Context {
   params: { id: string };
 }
 
-// Lida com GET /api/events/:id (Buscar evento por ID)
 export async function GET(request: NextRequest, context: Context) {
   try {
     const id = parseInt(context.params.id);
@@ -17,7 +15,7 @@ export async function GET(request: NextRequest, context: Context) {
     }
 
     const sql = 'SELECT * FROM events WHERE id = ?';
-    const [event]: any[] = await query(sql, [id]); // Pega o primeiro item do array
+    const [event]: any[] = await query(sql, [id]); 
 
     if (!event) {
       return NextResponse.json({ message: 'Evento não encontrado.' }, { status: 404 });
@@ -29,7 +27,6 @@ export async function GET(request: NextRequest, context: Context) {
   }
 }
 
-// Lida com PUT /api/events/:id (Atualizar evento por ID)
 export async function PUT(request: NextRequest, context: Context) {
   try {
     const id = parseInt(context.params.id);
@@ -59,7 +56,7 @@ export async function PUT(request: NextRequest, context: Context) {
   }
 }
 
-// Lida com DELETE /api/events/:id (Deletar evento por ID)
+
 export async function DELETE(request: NextRequest, context: Context) {
   try {
     const id = parseInt(context.params.id);
@@ -73,7 +70,7 @@ export async function DELETE(request: NextRequest, context: Context) {
     if (result.affectedRows === 0) {
       return NextResponse.json({ message: 'Evento não encontrado para exclusão.' }, { status: 404 });
     }
-    return NextResponse.json(null, { status: 204 }); // No Content
+    return NextResponse.json(null, { status: 204 });
   } catch (error: any) {
     console.error(`Erro ao deletar evento com ID ${context.params.id}:`, error);
     return NextResponse.json({ message: 'Falha ao deletar evento.' }, { status: 500 });

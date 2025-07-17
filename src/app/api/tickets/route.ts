@@ -1,10 +1,8 @@
-// src/app/api/tickets/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 
 export const runtime = 'nodejs';
 
-// Lida com GET /api/tickets (Buscar todos os tickets)
 export async function GET() {
   try {
     const tickets = await query('SELECT * FROM tickets');
@@ -18,7 +16,6 @@ export async function GET() {
   }
 }
 
-// Lida com POST /api/tickets (Criar um novo ticket)
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();

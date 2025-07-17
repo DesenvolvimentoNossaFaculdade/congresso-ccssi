@@ -1,10 +1,8 @@
-// src/app/api/sections/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 
 export const runtime = 'nodejs';
 
-// Lida com GET /api/sections (Buscar todas as seções)
 export async function GET() {
   try {
     const sections = await query('SELECT * FROM sections ORDER BY display_order ASC');
@@ -18,7 +16,6 @@ export async function GET() {
   }
 }
 
-// Lida com POST /api/sections (Criar uma nova seção)
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -39,7 +36,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(newSection, { status: 201 });
   } catch (error: any) {
     console.error('Erro ao criar seção:', error);
-    // Erro de foreign key constraint (se eventId não existir)
     if (error.code === 'ER_NO_REFERENCED_ROW_2' || error.errno === 1452) {
       return NextResponse.json({ message: 'ID do evento inválido. Evento não existe.' }, { status: 400 });
     }

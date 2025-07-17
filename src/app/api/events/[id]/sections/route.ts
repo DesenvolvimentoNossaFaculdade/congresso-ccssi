@@ -1,4 +1,3 @@
-// src/app/api/events/[id]/sections/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 
@@ -8,7 +7,6 @@ interface Context {
   params: { id: string };
 }
 
-// Lida com GET /api/events/:id/sections (Buscar seções por ID do evento)
 export async function GET(request: NextRequest, context: Context) {
   try {
     const eventId = parseInt(context.params.id);
@@ -29,7 +27,6 @@ export async function GET(request: NextRequest, context: Context) {
   }
 }
 
-// Lida com POST /api/events/:id/sections (Criar uma nova seção para este evento)
 export async function POST(request: NextRequest, context: Context) {
   try {
     const eventId = parseInt(context.params.id);
