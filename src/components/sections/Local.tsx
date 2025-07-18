@@ -25,7 +25,7 @@ export default function Local({
     return (
         <section
             id="local"
-            className="relative flex flex-col items-center justify-center gap-8 min-h-screen px-4 py-12 md:py-20 overflow-hidden"
+            className="relative flex flex-col items-center justify-center gap-8 min-h-screen px-4 py-12 md:py-20 overflow-hidden shadow-lg"
             aria-labelledby="local-section-title"
         >
             {/* Imagem de Fundo Otimizada */}
@@ -40,8 +40,7 @@ export default function Local({
                     Onde será realizado:
                 </h2>
                 
-                {/* Container da Imagem e Informações do Local (Este sim, flex-col md:flex-row) */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-20 w-full">
                     {/* Imagem do Local */}
                     <div className="w-full md:w-1/2 flex justify-center items-center flex-shrink-0">
                         <Image
@@ -49,7 +48,7 @@ export default function Local({
                             alt={locationAltText}
                             width={856}
                             height={856}
-                            className="w-108 h-108 object-contain drop-shadow-xl rounded-lg"
+                            className="w-600 h-auto object-contain drop-shadow-xl rounded-lg"
                             loading="lazy"
                         />
                     </div>
@@ -67,7 +66,6 @@ export default function Local({
                             {address}
                         </p>
 
-                        {/* Botão para abrir o mapa em nova aba */}
                         <Link
                             href={mapLink}
                             target="_blank"

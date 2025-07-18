@@ -19,13 +19,13 @@ export default function Banner({
     ctaLink = "#inscricao",
 }: BannerProps){
     return (
-        <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden" id="banner" aria-labelledby="banner-title">
+        <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden shadow-lg" id="banner" aria-labelledby="banner-title">
             <Image
                 src={imageUrl}
                 alt={altText}
                 width={856}
                 height={856}
-                className="w-200 h-150 object-contain drop-shadow-xl rounded-lg px-20"
+                className="w-300 h-200 object-contain drop-shadow-xl rounded-lg px-20"
                 loading="lazy"
             />
         </section>

@@ -6,7 +6,7 @@ export default function Evento(){
     return (
         <section
             id="aboutus"
-            className="relative flex flex-col items-center justify-center px-4 py-12 md:py-20 min-h-screen text-center md:text-left overflow-hidden"
+            className="relative flex flex-col items-center justify-center px-4 py-12 md:py-20 min-h-screen text-center md:text-left overflow-hidden shadow-lg"
             aria-labelledby="aboutus-title"
         >
             

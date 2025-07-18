@@ -11,6 +11,7 @@ import Evento from '@/components/sections/Evento';
 import HeadlineHorizontalLoop from '@/components/sections/HeadlineHorizontalLoop';
 import Local from '@/components/sections/Local';
 import Carousel from '@/components/sections/Carousel';
+import Lead from '@/components/sections/Lead';
 // import Agenda from '@/components/sections/Agenda';
 
 
@@ -27,6 +28,7 @@ export default function PublicHomePage() {
                 <div className="relative z-20">
                     <Carousel />
                     <Local />
+                    <Lead />
                 </div>
             
             <Footer />
