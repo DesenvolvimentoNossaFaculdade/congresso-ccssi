@@ -36,13 +36,13 @@ export default function Lead({
             <div className="relative z-20 w-full max-w-xl md:max-w-4xl flex flex-col items-center text-center gap-6">
                     <h2 
                         id="patrocinio-section-title"
-                        className="text-brand-orange text-4xl sm:text-5xl font-bold mb-8 font-arsenica drop-shadow-md whitespace-nowrap"
+                        className="text-orange-400 text-4xl sm:text-5xl font-bold mb-8 font-arsenica drop-shadow-md whitespace-nowrap"
                     >
-                    {title}
+                        {title}
                     </h2>
 
                     <p className="text-white text-lg mb-4 max-w-prose">
-                    {introText}
+                        {introText}
                     </p>
 
                     {benefits.length > 0 && (
