@@ -53,19 +53,36 @@ export const people = [
 
 export default function CarouselCircular() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [displayCount, setDisplayCount] = useState(1);
     const router = useRouter();
     const carouselRef = React.useRef<HTMLDivElement>(null);
 
-    const getDisplayIndexes = () => {
-    const indexes = [];
-    const totalPeople = people.length;
-    const displayCount = 4;
+    useEffect(() => {
+        const updateDisplayCount = () => {
+            if (window.innerWidth >= 1024) {
+                setDisplayCount(4);
+            } else if (window.innerWidth >= 768) {
+                setDisplayCount(2);
+            } else {
+                setDisplayCount(1);
+            }
+        };
 
-    for (let i = 0; i < displayCount; i++) {
-        indexes.push((currentIndex + i) % totalPeople);
-    }
-    return indexes;
-};
+        updateDisplayCount();
+
+        window.addEventListener('resize', updateDisplayCount);
+
+        return () => window.removeEventListener('resize', updateDisplayCount);
+    }, []);
+
+    const getDisplayIndexes = () => {
+        const indexes = [];
+        const totalPeople = people.length;
+        for (let i = 0; i < displayCount; i++) {
+            indexes.push((currentIndex + i) % totalPeople);
+        }
+        return indexes;
+    };
 
     const displayIndexes = getDisplayIndexes();
 
@@ -79,7 +96,7 @@ export default function CarouselCircular() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-        next();
+            next();
         }, 4000);
         return () => clearInterval(interval);
     }, [currentIndex]);
@@ -88,89 +105,111 @@ export default function CarouselCircular() {
         router.push(`/participante/${id}`);
     };
 
+    const sectionBackgroundImage = '/images/images/bg-site_01.jpg'; 
+
     return (
         <section
-        id="speakers"
-        className="w-full min-h-screen  bg-transparent flex flex-col items-center justify-center py-16 px-4 relative shadow-lg"
-        aria-labelledby="speakers-title"
+            id="speakers"
+            className="w-full min-h-screen flex flex-col items-center justify-center py-16 px-4 relative shadow-lg carousel-bg"
+            aria-labelledby="speakers-title"
         >
-        
-        <h2
-            id="speakers-title"
-            className="relative z-20 text-white text-4xl font-bold mb-12 font-arsenica text-center drop-shadow-md"
-        >
-            PALESTRANTES
-        </h2>
-
-        <div className="relative z-20 flex flex-col items-center w-full max-w-7xl">
-            <div 
-            ref={carouselRef}
-            className="flex flex-row justify-center items-stretch gap-6 w-full overflow-x-hidden p-4 no-scrollbar"
+            <div className="absolute inset-0 bg-primary-dark z-0"></div> 
+            
+            <h2
+                id="speakers-title"
+                className="relative z-20 text-orange-400 text-4xl sm:text-5xl font-bold mb-12 font-arsenica text-center drop-shadow-md" // ✅ CORRIGIDO: text-orange-400 para text-brand-orange
             >
-            {displayIndexes.map((personIndex) => {
-                const person = people[personIndex];
-                return (
-                <div
-                    key={person.id}
-                    className="relative flex-shrink-0 w-64 h-96 overflow-hidden shadow-lg transition-all duration-500 ease-in-out rounded-xl group border border-accent-yellow"
+                PALESTRANTES
+            </h2>
+
+            <div className="relative z-20 flex flex-col items-center w-full max-w-7xl">
+                <div 
+                    ref={carouselRef}
+                    className={`flex flex-row justify-center items-stretch gap-6 w-full overflow-x-hidden p-4 no-scrollbar
+                                ${displayCount === 1 ? 'max-w-xs' : 'max-w-full'} `} 
                 >
-                    <Image
-                        src={person.image}
-                        alt={person.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover rounded-xl"
-                        loading="lazy"
-                    />
+                    {displayIndexes.map((personIndex) => {
+                        const person = people[personIndex];
+                        return (
+                            <div
+                                key={person.id}
+                                
+                                className={`relative flex-shrink-0 w-64 h-96 overflow-hidden shadow-lg transition-all duration-500 ease-in-out rounded-xl group border border-accent-yellow
+                                            ${displayCount === 1 ? 'w-full max-w-xs' : ''}`}
+                            >
+                                <Image
+                                    src={person.image}
+                                    alt={person.name}
+                                    fill
+                                    sizes="(max-width: 640px) 90vw, (max-width: 768px) 70vw, (max-width: 1024px) 60vw, (max-width: 1280px) 50vw, 40vw"
+                                    className="object-cover rounded-xl"
+                                    loading="lazy"
+                                />
 
-                    <div className="absolute inset-0 bg-white/30 backdrop-blur-md transition-opacity duration-500 group-hover:opacity-0 rounded-xl z-10" />
+                                <div className="absolute inset-0 bg-white/30 backdrop-blur-md transition-opacity duration-500 group-hover:opacity-0 rounded-xl z-10" />
 
-                    <div className="absolute bottom-0 w-full bg-gradient-to-t from-primary-dark/80 to-transparent p-4 text-center z-20">
-                    <h3 className="text-white font-semibold text-lg mb-2">
-                        {person.name}
-                    </h3>
-                    <button
-                        onClick={() => handleViewDetails(person.id)}
-                        className="mt-2 px-4 py-2 text-sm font-bold rounded-full bg-brand-orange hover:bg-brand-orange/90 text-white transition opacity-0 group-hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2"
-                    >
-                        Ver detalhes
-                    </button>
-                    </div>
+                                <div className="absolute bottom-0 w-full bg-gradient-to-t from-primary-dark/80 to-transparent p-4 text-center z-20">
+                                    <h3 className="text-white font-semibold text-lg mb-2">
+                                        {person.name}
+                                    </h3>
+                                    <button
+                                        onClick={() => handleViewDetails(person.id)}
+                                        className="mt-2 px-4 py-2 text-sm font-bold rounded-full bg-brand-orange hover:bg-brand-orange/90 text-white transition opacity-0 group-hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2"
+                                    >
+                                        Ver detalhes
+                                    </button>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
-                );
-            })}
-            </div>
 
-            <div className="absolute top-1/2 -translate-y-1/2 flex justify-between w-full px-4 z-30">
-            <button
-                onClick={prev}
-                className="p-2 bg-brand-orange/80 hover:bg-brand-orange rounded-full shadow-lg text-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2"
-                aria-label="Anterior"
-            >
-                <ChevronLeft size={24} />
-            </button>
-            <button
-                onClick={next}
-                className="p-2 bg-brand-orange/80 hover:bg-brand-white rounded-full shadow-lg text-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2"
-                aria-label="Próximo"
-            >
-                <ChevronRight size={24} />
-            </button>
-            </div>
+                <div className="absolute top-1/2 -translate-y-1/2 flex justify-between w-full px-4 z-30">
+                    <button
+                        onClick={prev}
+                        className="p-2 bg-brand-orange/80 hover:bg-brand-orange rounded-full shadow-lg text-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2"
+                        aria-label="Anterior"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+                    <button
+                        onClick={next}
+                        className="p-2 bg-brand-orange/80 hover:bg-brand-orange rounded-full shadow-lg text-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2"
+                        aria-label="Próximo"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
+                </div>
 
-            <div className="flex gap-2 mt-4 z-20">
-            {people.map((_, index) => (
-                <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentIndex ? 'bg-white' : 'bg-white hover:bg-white/70'
-                }`}
-                aria-label={`Ir para o slide ${index + 1}`}
-                />
-            ))}
+                <div className="flex gap-2 mt-4 z-20">
+                    {people.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentIndex(index)}
+                            className={`w-3 h-3 rounded-full transition-colors ${
+                                index === currentIndex ? 'bg-brand-orange' : 'bg-white/50 hover:bg-white/70'
+                            }`}
+                            aria-label={`Ir para o slide ${index + 1}`}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+            
+            <style jsx>{`
+                .carousel-bg {
+                    background-image: url('${sectionBackgroundImage}');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: center center;
+                }
+
+                @media (max-width: 767px) {
+                    .carousel-bg {
+                        background-position: right center;
+                    }
+                }
+            `}</style>
         </section>
     );
 }

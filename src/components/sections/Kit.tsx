@@ -16,7 +16,7 @@ export default function Kit() {
                 id="ingressos-section-title"
                 className="text-orange-400 text-4xl sm:text-5xl md:text-6xl font-extrabold mb-12 font-arsenica text-center drop-shadow-lg"
             >
-                CONFIRA AS OPÇÕES
+                CONFIRA AS OPÇÕES DE INGRESSO
             </h2>
 
 

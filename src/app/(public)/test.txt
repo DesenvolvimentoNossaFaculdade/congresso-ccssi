@@ -1,0 +1,243 @@
+Guia de Responsividade com Tailwind CSS para Seu Projeto
+A chave para a responsividade com Tailwind é o uso de breakpoints e a filosofia mobile-first.
+
+Princípios Fundamentais do Tailwind CSS para Responsividade
+Mobile-First (Primeiro o Celular):
+
+Por padrão, todas as classes do Tailwind (ex: text-lg, p-4, flex) se aplicam a todos os tamanhos de tela, começando pelo menor (celular).
+
+Para aplicar estilos apenas a partir de um determinado tamanho de tela, você usa os prefixos de breakpoint.
+
+Breakpoints (Pontos de Quebra):
+
+Tailwind usa breakpoints padrão (que você pode personalizar no tailwind.config.js):
+
+sm (Small): 640px e acima
+
+md (Medium): 768px e acima
+
+lg (Large): 1024px e acima
+
+xl (Extra Large): 1280px e acima
+
+2xl (Double Extra Large): 1536px e acima
+
+Exemplo:
+
+w-full: Largura total em todas as telas.
+
+md:w-1/2: A partir de md (768px), a largura será 50%.
+
+lg:w-1/3: A partir de lg (1024px), a largura será 33.33%.
+
+Layouts Flexíveis (flex e grid):
+
+Use flex (Flexbox) ou grid (CSS Grid) para organizar seus elementos. Eles são inerentemente responsivos.
+
+Flexbox: flex, flex-col, flex-row, justify-center, items-center, gap-x, gap-y, flex-wrap, md:flex-nowrap.
+
+Grid: grid, grid-cols-1, sm:grid-cols-2, lg:grid-cols-3, gap.
+
+Larguras Máximas (max-w-):
+
+Para conteúdo principal, use max-w-screen-xl (ou lg, 2xl) combinado com mx-auto para centralizar. Isso evita que o conteúdo se estique demais em telas muito largas. Você já está usando isso no seu PublicHomePage, o que é ótimo!
+
+Unidades Relativas:
+
+Prefira unidades relativas como rem, em, %, vw (viewport width), vh (viewport height) para tamanhos de fonte, espaçamentos e dimensões, em vez de pixels fixos, para que os elementos se adaptem proporcionalmente. Tailwind já faz isso por padrão com suas classes de p-, m-, w-, h-, text-.
+
+Imagens e Mídia:
+
+Use w-full e h-auto para que as imagens sejam fluidas.
+
+object-cover ou object-contain para controlar como a imagem se encaixa no seu contêiner sem distorção.
+
+O componente next/image já é otimizado para responsividade e diferentes tamanhos de tela.
+
+Como Aplicar na Prática (Exemplos em Suas Seções)
+Vamos revisar algumas de suas seções para garantir a responsividade. A maioria já está bem encaminhada, mas podemos refinar.
+
+Exemplo 1: HeadlineHorizontalLoop.tsx
+Sua animação de letreiro já usa text-base sm:text-lg md:text-xl lg:text-2xl, o que é um ótimo exemplo de tipografia responsiva.
+
+// src/components/sections/HeadlineHorizontalLoop.tsx
+// ...
+<div
+    className={`flex items-center whitespace-nowrap text-white font-bold text-base sm:text-lg md:text-xl lg:text-2xl animate-scrollLoop`}
+>
+    {/* ... */}
+</div>
+// ...
+
+Melhoria: A lógica de translateX(-50%) já é responsiva. A única coisa a observar é se o whitespace-nowrap causa overflow horizontal em telas muito pequenas se o texto for excessivamente longo e a largura do contêiner for muito restritiva. Geralmente, para letreiros, isso é esperado.
+
+Exemplo 2: Local.tsx (Seção do Local)
+Esta seção já está usando md:flex-row para mudar a direção do layout em telas médias, o que é excelente.
+
+// src/components/sections/Local.tsx
+// ...
+<div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full">
+    {/* Imagem do Local */}
+    <div className="w-full md:w-1/2 flex justify-center items-center flex-shrink-0">
+        <Image
+            // ...
+            className="w-full max-w-[456px] h-auto object-contain drop-shadow-xl rounded-lg"
+        />
+    </div>
+
+    {/* Informações e Mapa */}
+    <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4">
+        {/* ... */}
+        {mapEmbedUrl && (
+            <div className="w-full aspect-video md:aspect-[4/3] rounded-lg overflow-hidden shadow-xl mt-4">
+                {/* ... iframe ... */}
+            </div>
+        )}
+    </div>
+</div>
+// ...
+
+Melhoria: O w-full md:w-1/2 para as colunas é perfeito. O max-w-[456px] na imagem é bom para limitar seu tamanho em telas grandes. O aspect-video e md:aspect-[4/3] no mapa também são ótimos para responsividade. Esta seção já está bem responsiva!
+
+Exemplo 3: Kit.tsx (Cards de Ingressos)
+Sua seção Kit usa flex-wrap e w-full sm:w-[45%] md:w-[22%] para os cards, o que é uma excelente estratégia responsiva.
+
+// src/components/sections/Kit.tsx
+// ...
+<div className="flex flex-wrap justify-center gap-8 max-w-7xl w-full">
+    {ingressos.map((item, idx) => (
+        <div
+            // ...
+            className="flex flex-col justify-between w-full sm:w-[45%] md:w-[22%] rounded-2xl p-6 border border-white/30 bg-white/10 backdrop-blur-xl shadow-xl text-center transition-transform hover:scale-105"
+        >
+            {/* ... */}
+        </div>
+    ))}
+</div>
+// ...
+
+Melhoria: Essa é uma abordagem muito boa. Em telas pequenas (w-full), os cards ocupam a largura total. Em sm (sm:w-[45%]), eles ficam dois por linha. Em md (md:w-[22%]), eles ficam quatro por linha. Você pode ajustar os percentuais ([45%], [22%]) ou usar classes como sm:w-1/2 e md:w-1/4 se preferir os valores padrão do Tailwind para divisões exatas.
+
+Exemplo 4: Faq.tsx (Acordeão)
+A seção FAQ já tem um max-w-3xl mx-auto para o contêiner principal, o que o centraliza e limita a largura.
+
+// src/components/sections/Faq.tsx
+// ...
+<div className="max-w-3xl mx-auto px-6 py-10 rounded-2xl border border-accent-yellow/30 backdrop-blur-md bg-primary-dark/50 shadow-2xl w-full relative z-10">
+    {/* ... */}
+</div>
+// ...
+
+Melhoria: Esta seção já é inerentemente responsiva devido ao max-w-3xl e w-full. O espaçamento (px-6, py-10) se adapta bem.
+
+Exemplo 5: Lead.tsx (Seja um Patrocinador)
+Esta seção também usa max-w-xs md:max-w-md para o card principal e um grid para os benefícios.
+
+// src/components/sections/Lead.tsx
+// ...
+<div className="relative z-20 w-full max-w-xs md:max-w-md flex flex-col items-center shadow-xl gap-6">
+    {/* ... */}
+    {benefits.length > 0 && (
+        <ul className="text-white text-left w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 mb-8">
+            {/* ... */}
+        </ul>
+    )}
+    {/* ... */}
+</div>
+// ...
+
+Melhoria: O uso de max-w-xs md:max-w-md para o card principal é bom para controlar o tamanho. O grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 para os benefícios é uma excelente forma de torná-los responsivos, mudando de 1 coluna para 2 e depois para 3 conforme a tela aumenta. Você pode ajustar os max-w do contêiner principal (max-w-xs md:max-w-md) para acomodar melhor os 3 benefícios em linha em telas maiores.
+
+Ferramentas para Testar a Responsividade
+A melhor forma de testar é usando as Ferramentas de Desenvolvedor do seu navegador (DevTools):
+
+Abra o site no navegador.
+
+Pressione F12 (ou clique com o botão direito e selecione "Inspecionar").
+
+Clique no ícone de "Toggle device toolbar" (geralmente um ícone de celular/tablet) no canto superior esquerdo do painel do DevTools.
+
+Arraste as bordas da viewport ou selecione tamanhos de dispositivos predefinidos para ver como seu site se comporta em diferentes larguras.
+
+Conclusão e Próximos Passos
+Seu projeto já está utilizando muitos dos princípios de responsividade do Tailwind CSS de forma eficaz. O principal é continuar pensando "mobile-first" e usar os prefixos de breakpoint para ajustar o layout, tamanhos de fonte e espaçamentos conforme a tela aumenta.
+
+Para continuar trabalhando na responsividade:
+
+Comece sempre do menor para o maior: Estilize para celulares primeiro, depois use os breakpoints (sm:, md:, lg:) para adicionar estilos para telas maiores.
+
+Teste constantemente: Use as DevTools para redimensionar a janela e verificar o comportamento em diferentes tamanhos.
+
+Ajuste os max-w-: Garanta que seus contêineres principais (como o max-w-screen-xl mx-auto no PublicHomePage) e os contêineres internos de cada seção tenham uma largura máxima adequada para evitar que o conteúdo se estique demais.
+
+Revise a tipografia: Embora você já use text-base sm:text-lg, etc., verifique se os tamanhos de fonte são legíveis em todas as telas.
+
+Se você quiser focar em uma seção específica que ainda não está se comportando como esperado, me diga qual é, e podemos detalhar as classes Tailwind necessárias!
+
+
+
+
+/* Diretivas Tailwind CSS v4 */
+@import "tailwindcss/preflight"; /* Equivalente a @tailwind base */
+@tailwind utilities; /* Inclui componentes e utilitários */
+
+body {
+    /* Estilos globais para o body. A imagem de fundo global está definida aqui. */
+    background-image: url('/images/bg-site_00.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    min-height: 100vh; 
+
+    /* ✅ NOVO: Posição do background para telas pequenas (mobile-first) */
+    /* '80% center' move a imagem para a esquerda, fazendo com que a porção mais à direita da imagem fique mais visível/centralizada na viewport. */
+    background-position: 80% center; 
+
+    /* Defina as cores de texto padrão aqui ou use classes Tailwind nos seus componentes */
+    color: #171717; /* Cor de texto padrão para o modo claro */
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+/* ✅ NOVO: Media Query para telas maiores (a partir de 640px - breakpoint 'sm' do Tailwind) */
+@media (min-width: 640px) { 
+    body {
+        background-position: center center; /* Reverte para o centro padrão em telas maiores */
+    }
+}
+
+/* Definição de cores para modo escuro, se aplicável */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #ededed; /* Cor de texto padrão para o modo escuro */
+    }
+}
+
+/* Keyframes e animações globais */
+@keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fade-in-down 0.3s ease-out forwards;
+}
+
+/* Animação para o HeadlineHorizontalLoop (se estiver aqui e não em <style jsx> no componente) */
+@keyframes scrollLoop {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scrollLoop {
+    animation: scrollLoop var(--animation-duration, 30s) linear infinite; 
+}

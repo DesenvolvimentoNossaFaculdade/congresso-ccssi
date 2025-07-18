@@ -37,7 +37,7 @@ export default function Local({
                     Onde será realizado:
                 </h2>
                 
-                <div className="flex flex-col md:flex-row items-center justify-center gap-20 w-full">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full">
                     {/* Imagem do Local */}
                     <div className="w-full md:w-1/2 flex justify-center items-center flex-shrink-0">
                         <Image
@@ -45,7 +45,7 @@ export default function Local({
                             alt={locationAltText}
                             width={856}
                             height={856}
-                            className="w-600 h-auto object-contain drop-shadow-xl rounded-lg"
+                            className="w-full max-w[456px] h-auto object-contain drop-shadow-xl rounded-lg"
                             loading="lazy"
                         />
                     </div>

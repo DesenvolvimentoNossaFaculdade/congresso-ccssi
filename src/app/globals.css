@@ -31,6 +31,16 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
+
+
+    background-position: 70% center;
+}
+
+
+@media (min-width: 640px) { 
+    body {
+        background-position: center center;
+    }
 }
 
 @keyframes fade-in-down {
@@ -42,6 +52,19 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes scrollLoop {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scrollLoop {
+    animation: scrollLoop var(--animation-duration, 3s) linear infinite; 
 }
 
 .animate-fade-in-down {

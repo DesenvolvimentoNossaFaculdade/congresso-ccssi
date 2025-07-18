@@ -23,16 +23,19 @@ export default function PublicHomePage() {
     return (
         <>
             <Header />
-            <Banner />
-            <HeadlineHorizontalLoop/>
-            <Evento />
-                {/* Content */}
+
+            {/* BG 01 --> Padrão do Site. */}
+            <div className="relative z-20">
+                <Banner />
+                <HeadlineHorizontalLoop speed='fast'/>
+                <Evento />
+            </div>
                 <div className="relative z-20">
                     <Carousel />
                     <Local />
                     <Kit />
-                    <Faq />
                     <Lead />
+                    <Faq />
                 </div>
             
             <Footer />

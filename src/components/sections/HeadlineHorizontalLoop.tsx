@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -12,15 +11,15 @@ interface HeadlineLoopProps {
 }
 
 export default function HeadlineHorizontalLoop({
-    texts = ['UM EVENTO ESPECIAL'],
+    texts = ['DIA 26 E 27 DE SETEMBRO DE 2025', 'DIA 26 E 27 DE SETEMBRO DE 2025', 'DIA 26 E 27 DE SETEMBRO DE 2025'],
     speed = 'normal',
     customDuration,
     showSparkles = true,
 }: HeadlineLoopProps) {
     const animationDurationMap = {
-        slow: '60s',
-        normal: '30s',
-        fast: '1s',
+        slow: '0',
+        normal: '0',
+        fast: '0',
     };
 
     const finalDuration = customDuration || animationDurationMap[speed];
@@ -37,28 +36,12 @@ export default function HeadlineHorizontalLoop({
             className={`flex items-center whitespace-nowrap text-orange font-bold text-base sm:text-lg md:text-xl lg:text-2xl animate-scrollLoop`}
         >
             {duplicatedTexts.map((text, index) => (
-                <span key={index} className="flex flex-shrink-0 items-center mx-3 sm:mx-6 text-orange-100">
-                    {showSparkles && <Sparkles className="w-4 h-4 mr-2 text-orange" aria-hidden="true" />}
+                <span key={index} className="flex flex-shrink-0 items-center mx-3 sm:mx-6 text-orange-400">
+                    {showSparkles}
                     {text.toUpperCase()}
                 </span>
             ))}
         </div>
-
-        
-        <style jsx>{`
-                @keyframes scrollLoop {
-                0% {
-                    transform: translateX(0%);
-                }
-                100% {
-                    transform: translateX(-100%);
-                }
-                }
-
-                .animate-scrollLoop {
-                animation: scrollLoop ${finalDuration} linear infinite;
-                }
-        `}</style>
         </section>
     );
 }
