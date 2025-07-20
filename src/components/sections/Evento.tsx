@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { Pin } from 'lucide-react';
+
 
 export default function Evento(){
 
@@ -10,7 +9,6 @@ export default function Evento(){
             aria-labelledby="aboutus-title"
         >
             
-
             {/* Content */}
             <div className="max-w-screen-xl w-full relative z-20">
                 <h2 

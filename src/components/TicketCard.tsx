@@ -29,7 +29,6 @@ export default function TicketCard({ item, whatsappLink = 'https://wa.me/5588994
                 {item.title}
             </h3>
 
-            {/* Lista de beneficios do Ingresso. */}
             <ul className="text-sm text-white mb-4 text-left space-y-2">
                 {item.benefits.map((benefit, idx) => (
                     <li key={idx} className='flex items-center gap-2'>

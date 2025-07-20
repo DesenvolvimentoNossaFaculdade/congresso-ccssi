@@ -15,7 +15,7 @@ interface LocalProps {
 
 export default function Local({
     
-    locationImageUrl = '/images/local.png', // Preferência por .webp para otimização, se disponível. Se for .png, mantenha .png
+    locationImageUrl = '/images/local.png',
     locationAltText = 'Ilustração do Centro de Convenções do Cariri',
     title = 'CENTRO DE CONVENÇÕES DO CARIRI',
     address = 'Av. Padre Cícero, 4400 - Muriti, Crato',
@@ -38,7 +38,6 @@ export default function Local({
                 </h2>
                 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full">
-                    {/* Imagem do Local */}
                     <div className="w-full md:w-1/2 flex justify-center items-center flex-shrink-0">
                         <Image
                             src={locationImageUrl}
@@ -50,7 +49,6 @@ export default function Local({
                         />
                     </div>
 
-                    {/* Informações e Mapa */}
                     <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4">
                         <h3
                             id="local-title"

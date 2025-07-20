@@ -19,7 +19,6 @@ export default function Agenda() {
                 Agenda do Evento
             </h2>
 
-            {/* Container dos Cards da Agenda. */}
             <div className="w-full max-w-2xl flex flex-col items-center gap-8 relative z-10">
                 {agenda.map((item) => (
                     <AgendaCard key={item.id} item={item} />

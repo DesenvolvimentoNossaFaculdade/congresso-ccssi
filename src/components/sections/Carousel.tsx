@@ -117,7 +117,7 @@ export default function CarouselCircular() {
             
             <h2
                 id="speakers-title"
-                className="relative z-20 text-orange-400 text-4xl sm:text-5xl font-bold mb-12 font-arsenica text-center drop-shadow-md" // ✅ CORRIGIDO: text-orange-400 para text-brand-orange
+                className="relative z-20 text-orange-400 text-4xl sm:text-5xl font-bold mb-12 font-arsenica text-center drop-shadow-md"
             >
                 PALESTRANTES
             </h2>

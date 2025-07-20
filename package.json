@@ -2,6 +2,7 @@
     "name": "site-congresso-ccssi",
     "version": "0.1.0",
     "private": true,
+    "type": "module",
     "scripts": {
         "dev": "next dev --turbopack",
         "build": "next build",
@@ -26,6 +27,7 @@
         "eslint-config-next": "15.4.1",
         "postcss": "^8.5.6",
         "postcss-import": "^16.1.1",
+        "tailwindcss": "^3.4.17",
         "typescript": "^5"
     }
 }

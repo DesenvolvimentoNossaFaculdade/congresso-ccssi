@@ -27,7 +27,6 @@ export default function Faq() {
                 Perguntas Frequentes
             </p>
 
-            {/* Container dos Itens do FAQ */}
             <div className="max-w-3xl mx-auto px-6 py-10 rounded-2xl border border-orange-400/30 backdrop-blur-md bg-primary-dark/50 shadow-2xl w-full relative z-10">
                 <div className="space-y-4">
                 {faqData.map((item, index) => (

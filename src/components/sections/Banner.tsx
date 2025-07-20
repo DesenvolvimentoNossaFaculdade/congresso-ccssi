@@ -26,7 +26,6 @@ export default function Banner({
             id="banner"
             aria-labelledby="banner-title"
         >
-            {/* Título da seção (mantido para acessibilidade, mas pode ser visualmente oculto se a imagem for o foco principal) */}
             <h2 id="banner-title" className="sr-only">{title} - {subtitle}</h2>
             <Image
                 src={imageUrl}

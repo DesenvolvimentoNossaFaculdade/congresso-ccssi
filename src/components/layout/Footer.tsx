@@ -11,14 +11,12 @@ export default function Footer(){
         >
             <h2 id="footer-heading" className="sr-only">Informações do Rodapé</h2>
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-6 text-center md:text-left">
-                {/* Direitos Autorais. */}
                 <div className="flex-1 order-2 md:order-1">
                     <p className="text-sm">
                         &copy; {currentYear}
                     </p>
                 </div>
-
-                {/* Logo */}
+                
                 <div className="md:w-auto flex-shrink-0 order-1 md:order-2">
                     <Image
                         src="/images/sigla_CCSI.png"

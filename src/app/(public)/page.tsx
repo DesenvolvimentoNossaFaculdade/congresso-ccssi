@@ -14,7 +14,6 @@ import Carousel from '@/components/sections/Carousel';
 import Lead from '@/components/sections/Lead';
 import Kit from '@/components/sections/Kit';
 import Faq from '@/components/sections/Faq';
-// import Agenda from '@/components/sections/Agenda';
 
 
 export default function PublicHomePage() {
