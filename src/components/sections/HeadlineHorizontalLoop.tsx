@@ -28,7 +28,7 @@ export default function HeadlineHorizontalLoop({
 
     return (
         <section
-            className="w-full bg-primary-dark/20 overflow-hidden py-2"
+            className="w-full bg-primary-dark/35 overflow-hidden py-2 shadow-lg"
             aria-live="off"
             aria-label="Manchetes em loop horizontal"
         >

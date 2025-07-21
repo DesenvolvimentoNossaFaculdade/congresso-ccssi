@@ -27,14 +27,6 @@ export const ingressos: IngressoItem[] = [
     logoSrc: '/images/LogoSimbolo.png',
   },
   {
-    id: 'passaporte-ingresso-cnp',
-    title: 'PASSAPORTE INGRESSO CNP',
-    preco: 'R$ 0,00',
-    parcelas: null, // Sem parcelas
-    benefits: ['Acesso a dois dias de evento', 'Welcome kit', 'Certificado de participação', 'Exclusivo para convidados CNP'],
-    logoSrc: '/images/LogoSimbolo.png',
-  },
-  {
     id: 'somente-palestras-lote-0',
     title: 'INGRESSO SOMENTE PALESTRAS LOTE 0',
     preco: 'R$ 100,00',
