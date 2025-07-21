@@ -39,7 +39,7 @@ export default function HeadlineHorizontalLoop({
                 {duplicatedTexts.map((text, index) => (
                     <span
                         key={index}
-                        className="flex flex-shrink-0 items-center mx-3 sm:mx-6 text-neon-orange"
+                        className="flex flex-shrink-0 items-center mx-3 sm:mx-6 text-white font-raleway"
                     >
                         {text.toUpperCase()}
                     </span>

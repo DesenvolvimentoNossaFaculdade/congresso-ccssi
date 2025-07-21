@@ -13,6 +13,7 @@ const config = {
     			'primary-dark': '#5F4235',
     			'accent-yellow': '#FCCD9A',
     			'brand-orange': '#C05621',
+				'gabigol-orange': '#ff9600',
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
     			card: {

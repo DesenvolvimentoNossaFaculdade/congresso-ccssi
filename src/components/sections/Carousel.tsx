@@ -110,13 +110,13 @@ export default function CarouselCircular() {
     return (
         <section
             id="speakers"
-            className="w-full min-h-screen flex flex-col items-center justify-center py-16 px-4 relative shadow-lg carousel-bg"
+            className="w-full min-h-screen flex flex-col items-center justify-center py-16 px-4 relative shadow-lg carousel-bg font-raleway"
             aria-labelledby="speakers-title"
         >
             
             <h2
                 id="speakers-title"
-                className="relative z-20 text-orange-400 text-4xl sm:text-5xl font-bold mb-12 font-arsenica text-center drop-shadow-md"
+                className="relative z-20 text-gabigol-orange text-4xl sm:text-5xl font-bold mb-12 text-center drop-shadow-md"
             >
                 PALESTRANTES
             </h2>

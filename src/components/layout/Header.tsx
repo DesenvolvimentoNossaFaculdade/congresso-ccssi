@@ -57,7 +57,7 @@ export default function Header() {
             className={`
                 ${pathname === '/' ? 'fixed top-0 left-0' : ''}
                 w-full z-50 px-4 py-2 transition-all duration-300
-                ${isGlass ? 'bg-[#5F4235]/70 backdrop-blur-md border-b border-[#FCCD9A]/60 shadow-lg' : 'bg-transparent'}
+                ${isGlass ? 'bg-[#5F4235]/70 backdrop-blur-md border-b border-[#FCCD9A]/60 shadow-lg' : 'bg-transparent'} font-raleway
             `}
             >
             <div className="flex items-center justify-between max-w-7xl mx-auto">

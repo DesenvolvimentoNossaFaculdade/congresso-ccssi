@@ -29,14 +29,14 @@ export default function Lead({
     return (
         <section
             id="patrocinio"
-            className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 py-12 text-center bg-transparent shadow-lg"
+            className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 py-12 text-center bg-transparent shadow-lg font-raleway"
             aria-labelledby="patrocinio-section-title"
         >
         
             <div className="relative z-20 w-full max-w-xl md:max-w-4xl flex flex-col items-center text-center gap-6">
                     <h2 
                         id="patrocinio-section-title"
-                        className="text-orange-400 text-4xl sm:text-5xl font-bold mb-8 font-arsenica drop-shadow-md whitespace-nowrap"
+                        className="text-gabigol-orange text-3xl sm:text-5xl font-bold mb-8  drop-shadow-md whitespace-nowrap"
                     >
                         {title}
                     </h2>

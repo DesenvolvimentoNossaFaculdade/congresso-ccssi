@@ -25,14 +25,14 @@ export default function Local({
     return (
         <section
             id="local"
-            className="relative flex flex-col items-center justify-center gap-8 min-h-screen px-4 py-12 md:py-20 overflow-hidden shadow-lg"
+            className="relative flex flex-col items-center justify-center gap-8 min-h-screen px-4 py-12 md:py-20 overflow-hidden shadow-lg font-raleway"
             aria-labelledby="local-section-title"
         >   
             <div className="max-w-screen-xl w-full relative z-20 flex flex-col items-center text-center">
                 
                 <h2
                     id="local-section-title"
-                    className="text-orange-400 text-4xl sm:text-5xl font-bold mb-8 font-arsenica drop-shadow-md"
+                    className="text-gabigol-orange text-4xl sm:text-5xl font-bold mb-8 drop-shadow-md"
                 >
                     Onde será realizado:
                 </h2>

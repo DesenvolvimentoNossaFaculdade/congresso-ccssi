@@ -14,12 +14,12 @@ export default function Faq() {
     return (
         <section
             id="faq"
-            className="relative z-20 flex flex-col items-center justify-center min-h-screen py-12 px-4 bg-transparent shadow-lg"
+            className="relative z-20 flex flex-col items-center justify-center min-h-screen py-12 px-4 bg-transparent shadow-lg font-raleway"
             aria-labelledby="faq-section-title"
         >
             <h2
                 id="faq-scetion-title"
-                className="text-orange-400 text-5xl md:text-6xl font-extrabold mb-4 text-center drop-shadow-lg font-arsenica"
+                className="text-gabigol-orange text-5xl md:text-6xl font-extrabold mb-4 text-center drop-shadow-lg"
             >
                 F.A.Q
             </h2>
