@@ -1,0 +1,138 @@
+// src/app/api/ingressos/route.ts
+// Esta rota de API é responsável por fornecer e gerenciar dados de ingressos.
+
+import { query } from '@/lib/db'; // Importa a função de query do seu db.ts
+import { NextResponse } from 'next/server'; // Para lidar com respostas HTTP no Next.js
+
+/**
+ * Manipula requisições GET para obter todos os ingressos.
+ * Retorna uma lista de ingressos do banco de dados.
+ */
+export async function GET() {
+  try {
+    const ingressos = await query('SELECT * FROM ingressos ORDER BY title ASC'); // Busca todos os ingressos, ordenados por título
+    
+    // Como a coluna 'benefits' é do tipo JSON no banco de dados,
+    // precisamos fazer o parse dela de string para objeto/array JavaScript.
+    const parsedIngressos = ingressos.map((ingresso: any) => ({
+        ...ingresso,
+        benefits: JSON.parse(ingresso.benefits || '[]') // Converte a string JSON para array, caso seja null, retorna um array vazio
+    }));
+    return NextResponse.json(parsedIngressos); // Retorna a lista de ingressos parseada como JSON
+  } catch (error) {
+    console.error('Erro ao buscar ingressos:', error);
+    return NextResponse.json({ error: 'Erro ao buscar ingressos' }, { status: 500 });
+  }
+}
+
+/**
+ * Manipula requisições POST para criar um novo ingresso.
+ * Espera 'id', 'title', 'price', 'installments', 'benefits', 'logo_src' no corpo da requisição.
+ */
+export async function POST(request: Request) {
+  try {
+    const { id, title, price, installments, benefits, logo_src } = await request.json();
+
+    // Validação básica dos campos obrigatórios
+    if (!id || !title || price === undefined || price === null) {
+      return NextResponse.json({ error: 'ID, título e preço do ingresso são obrigatórios.' }, { status: 400 });
+    }
+
+    // Converte o array de benefícios para string JSON para armazenar no banco de dados
+    const benefitsJson = JSON.stringify(benefits || []);
+
+    // Insere o novo ingresso no banco de dados
+    const result: any = await query(
+      `INSERT INTO ingressos (id, title, price, installments, benefits, logo_src) VALUES (?, ?, ?, ?, ?, ?)`,
+      [id, title, price, installments, benefitsJson, logo_src]
+    );
+
+    // Retorna uma mensagem de sucesso
+    return NextResponse.json({ message: 'Ingresso adicionado com sucesso!' }, { status: 201 });
+  } catch (error) {
+    console.error('Erro ao adicionar ingresso:', error);
+    return NextResponse.json({ error: 'Erro ao adicionar ingresso.' }, { status: 500 });
+  }
+}
+
+/**
+ * Manipula requisições PUT para atualizar um ingresso existente.
+ * Espera 'id' e os campos a serem atualizados no corpo da requisição.
+ *
+ * NOTA: Para rotas PUT/DELETE mais RESTful com ID, você criaria um arquivo dinâmico:
+ * src/app/api/ingressos/[id]/route.ts
+ * O parâmetro 'id' seria acessado via 'params' no objeto de contexto da requisição.
+ * Para simplicidade e para manter em um único arquivo, esta implementação assume
+ * que o ID virá no corpo da requisição.
+ */
+export async function PUT(request: Request) {
+  try {
+    const { id, title, price, installments, benefits, logo_src } = await request.json();
+
+    // Validação básica
+    if (!id) {
+      return NextResponse.json({ error: 'O ID do ingresso é obrigatório para atualização.' }, { status: 400 });
+    }
+
+    // Constrói a query de atualização dinamicamente para incluir apenas os campos fornecidos
+    const updates: string[] = [];
+    const params: any[] = [];
+
+    if (title !== undefined) { updates.push('title = ?'); params.push(title); }
+    if (price !== undefined) { updates.push('price = ?'); params.push(price); }
+    if (installments !== undefined) { updates.push('installments = ?'); params.push(installments); }
+    if (benefits !== undefined) { 
+      updates.push('benefits = ?'); 
+      params.push(JSON.stringify(benefits)); // Converte array para JSON string
+    }
+    if (logo_src !== undefined) { updates.push('logo_src = ?'); params.push(logo_src); }
+
+    if (updates.length === 0) {
+      return NextResponse.json({ message: 'Nenhum campo fornecido para atualização.' }, { status: 400 });
+    }
+
+    params.push(id); // Adiciona o ID no final dos parâmetros para a cláusula WHERE
+
+    const result: any = await query(
+      `UPDATE ingressos SET ${updates.join(', ')} WHERE id = ?`,
+      params
+    );
+
+    if (result.affectedRows === 0) {
+      return NextResponse.json({ error: 'Ingresso não encontrado ou nenhum dado alterado.' }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: 'Ingresso atualizado com sucesso!' }, { status: 200 });
+  } catch (error) {
+    console.error('Erro ao atualizar ingresso:', error);
+    return NextResponse.json({ error: 'Erro ao atualizar ingresso.' }, { status: 500 });
+  }
+}
+
+/**
+ * Manipula requisições DELETE para remover um ingresso.
+ * Espera 'id' no corpo da requisição.
+ *
+ * NOTA: Assim como no PUT, para uma rota DELETE mais RESTful, o ID viria
+ * como um parâmetro de URL em um arquivo src/app/api/ingressos/[id]/route.ts.
+ */
+export async function DELETE(request: Request) {
+  try {
+    const { id } = await request.json(); // Espera o ID no corpo para simplicidade neste arquivo
+
+    if (!id) {
+      return NextResponse.json({ error: 'O ID do ingresso é obrigatório para exclusão.' }, { status: 400 });
+    }
+
+    const result: any = await query(`DELETE FROM ingressos WHERE id = ?`, [id]);
+
+    if (result.affectedRows === 0) {
+      return NextResponse.json({ error: 'Ingresso não encontrado.' }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: 'Ingresso removido com sucesso!' }, { status: 200 });
+  } catch (error) {
+    console.error('Erro ao remover ingresso:', error);
+    return NextResponse.json({ error: 'Erro ao remover ingresso.' }, { status: 500 });
+  }
+}

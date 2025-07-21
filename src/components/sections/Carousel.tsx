@@ -113,7 +113,6 @@ export default function CarouselCircular() {
             className="w-full min-h-screen flex flex-col items-center justify-center py-16 px-4 relative shadow-lg carousel-bg"
             aria-labelledby="speakers-title"
         >
-            <div className="absolute inset-0 bg-primary-dark z-0"></div> 
             
             <h2
                 id="speakers-title"
@@ -125,7 +124,7 @@ export default function CarouselCircular() {
             <div className="relative z-20 flex flex-col items-center w-full max-w-7xl">
                 <div 
                     ref={carouselRef}
-                    className={`flex flex-row justify-center items-stretch gap-6 w-full overflow-x-hidden p-4 no-scrollbar
+                    className={`flex flex-row justify-center items-stretch gap-8 w-full overflow-x-hidden p-4 no-scrollbar
                                 ${displayCount === 1 ? 'max-w-xs' : 'max-w-full'} `} 
                 >
                     {displayIndexes.map((personIndex) => {
@@ -134,14 +133,14 @@ export default function CarouselCircular() {
                             <div
                                 key={person.id}
                                 
-                                className={`relative flex-shrink-0 w-64 h-96 overflow-hidden shadow-lg transition-all duration-500 ease-in-out rounded-xl group border border-accent-yellow
+                                className={`relative flex-shrink-0 w-72 h-[400px] overflow-hidden shadow-lg transition-all duration-500 ease-in-out rounded-xl group border border-accent-yellow
                                             ${displayCount === 1 ? 'w-full max-w-xs' : ''}`}
                             >
                                 <Image
                                     src={person.image}
                                     alt={person.name}
                                     fill
-                                    sizes="(max-width: 640px) 90vw, (max-width: 768px) 70vw, (max-width: 1024px) 60vw, (max-width: 1280px) 50vw, 40vw"
+                                    sizes="(max-width: 640px) 90vw, (max-width: 768px) 70vw, (max-width: 1024px) 60vw, (max-width: 1024px) 25vw, 20vw"
                                     className="object-cover rounded-xl"
                                     loading="lazy"
                                 />
