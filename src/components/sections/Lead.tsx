@@ -16,7 +16,7 @@ interface LeadProps {
 export default function Lead({
     logoSrc = '/images/CCSI2025.png',
     logoAlt = 'Logo do Congresso Caririense de Saúde Integrada 2025',
-    title = 'Seja um Patrocinador',
+    title = 'Seja um Patrocinador:',
     introText = 'Sua marca pode fazer parte do maior evento de saúde integrada do Cariri. Conecte-se com um público qualificado e fortaleça sua presença no mercado.',
     benefits = [
         { icon: Eye, text: 'Ampla visibilidade da marca' },

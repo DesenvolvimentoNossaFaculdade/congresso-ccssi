@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Raleway } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { createTables } from "@/lib/db";
+//import { createTables } from "@/lib/db";
 
 //! criação das tabelas:
-createTables();
+//createTables();
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

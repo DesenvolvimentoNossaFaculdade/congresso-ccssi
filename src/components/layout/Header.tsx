@@ -67,9 +67,9 @@ export default function Header() {
                     <Image
                     src="/images/simbolo.png" 
                     alt="Logo do CCSI 2025"
-                    width={40} 
-                    height={40}
-                    className="h-auto w-20" 
+                    width={70} 
+                    height={70}
+                    className=" w-auto" 
                     priority 
                     />
                 )}

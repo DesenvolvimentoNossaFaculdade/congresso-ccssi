@@ -22,7 +22,7 @@ export default function Banner({
 }: BannerProps) {
     return (
         <section
-            className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden shadow-lg flex items-center justify-center" // ✅ Adicionei flexbox para centralizar a imagem
+            className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden shadow-lg flex items-center justify-center shadow-lg"
             id="banner"
             aria-labelledby="banner-title"
         >

@@ -16,7 +16,7 @@ export default function Kit() {
                 id="ingressos-section-title"
                 className="text-gabigol-orange text-4xl sm:text-5xl md:text-6xl font-extrabold mb-12 text-center drop-shadow-lg font-raleway"
             >
-                CONFIRA AS OPÇÕES DE INGRESSO
+                Confira as opções de ingresso:
             </h2>
 
 

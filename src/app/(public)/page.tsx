@@ -14,6 +14,7 @@ import Carousel from '@/components/sections/Carousel';
 import Lead from '@/components/sections/Lead';
 import Kit from '@/components/sections/Kit';
 import Faq from '@/components/sections/Faq';
+import CNPSection from '@/components/sections/CNPSection';
 
 
 export default function PublicHomePage() {
@@ -26,12 +27,13 @@ export default function PublicHomePage() {
             {/* BG 01 --> Padrão do Site. */}
             <div className="relative z-20">
                 <Banner />
-                <HeadlineHorizontalLoop speed='fast'/>
+                <HeadlineHorizontalLoop/>
                 <Evento />
             </div>
                 <div className="relative z-20">
                     <Carousel />
                     <Local />
+                    <CNPSection />
                     <Kit />
                     <Lead />
                     <Faq />
