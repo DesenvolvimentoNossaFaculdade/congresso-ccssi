@@ -1,6 +1,3 @@
-//* --> Padrão
-import Image from 'next/image';
-
 //? --> Base layout
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
