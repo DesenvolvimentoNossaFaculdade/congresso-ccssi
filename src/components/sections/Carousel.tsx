@@ -1,34 +1,30 @@
-'use client'; // Este componente ainda usará estado e interatividade (hover)
+'use client'; 
 
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaLinkedin, FaTwitter, FaGlobe } from 'react-icons/fa'; // Ícones para redes sociais
+import { FaInstagram, FaLinkedin, FaTwitter, FaGlobe } from 'react-icons/fa';
 
-// ✅ Dados dos palestrantes: Apenas os 4 primeiros para o layout estático.
-// Se você quiser mais, adicione-os aqui.
+
 export const people = [
     {
         id: 1,
-        name: "Jane Doe",
-        profession: "Pesquisadora em Neurodesenvolvimento",
-        image: "/images/speakers/jane.jpeg",
+        name: "Dr. João Jorge Sousa",
+        profession: "Terapeuta Ocupacional",
+        image: "/images/speakers/dr-joao-jorge.jpg",
         description: `<p>Jane Doe é uma renomada pesquisadora com foco em neurodesenvolvimento e primeira infância. Possui doutorado pela Universidade Federal e é autora de diversos artigos científicos e livros na área.</p>`,
         socialMedia: [
-            { platform: "linkedin", url: "https://linkedin.com/in/janedoe" },
-            { platform: "twitter", url: "https://twitter.com/janedoe" },
-            { platform: "website", url: "https://janedoe.com" },
+            { platform: "instagram", url: "https://www.instagram.com/dr.joaojorge" },
         ],
     },
     {
         id: 2,
-        name: "John Smith",
-        profession: "Psicólogo Clínico",
-        image: "/images/speakers/john.jpeg",
+        name: "Cida Bezerra",
+        profession: "Psicanalista e Analista Corporal",
+        image: "/images/speakers/cida.jpg",
         description: `<p>John Smith é psicólogo clínico com vasta experiência no atendimento de adolescentes e adultos. Especialista em terapia cognitivo-comportamental, atua também como supervisor clínico e palestrante.</p>`,
         socialMedia: [
-            { platform: "linkedin", url: "https://linkedin.com/in/johnsmith" },
-            { platform: "twitter", url: "https://twitter.com/johnsmith" },
+            { platform: "instagram", url: "https://www.instagram.com/cidabzerra.118/" },
         ],
     },
     {
@@ -61,6 +57,8 @@ const getSocialIcon = (platform: string) => {
             return <FaTwitter size={20} />;
         case 'website':
             return <FaGlobe size={20} />;
+        case 'instagram':
+            return <FaInstagram size={20} />;
         default:
             return null;
     }
@@ -68,7 +66,7 @@ const getSocialIcon = (platform: string) => {
 
 export default function SpeakersGrid() {
     const sectionBackgroundImage = '/images/images/bg-site_01.jpg';
-
+    
     return (
         <section
             id="speakers"
@@ -102,9 +100,9 @@ export default function SpeakersGrid() {
                         
                         <div className="absolute inset-0 bg-white/30 backdrop-blur-md transition-opacity duration-500 group-hover:opacity-0 rounded-xl z-10" />
 
-                        <div className="absolute inset-0 bg-primary-dark/80 backdrop-blur-sm p-4 text-center z-20 flex flex-col items-center justify-center transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-                            <h3 className="text-white font-semibold text-xl mb-2">{person.name}</h3>
-                            <p className="text-white/80 text-sm">{person.profession}</p>
+                        <div className="absolute bottom-0 w-full bg-gradient-to-t from-primary-dark/80 to-transparent p-4 text-center z-20 flex flex-col items-center justify-end h-full transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+                            <h3 className="text-white font-semibold text-xl mb-2 text-balance">{person.name}</h3>
+                            <p className="text-white/90 text-sm">{person.profession}</p>
                             
                             {person.socialMedia && person.socialMedia.length > 0 && (
                                 <div className="flex gap-4 mt-4">
@@ -123,11 +121,12 @@ export default function SpeakersGrid() {
                                 </div>
                             )}
 
-                            <Link href={`/participante/${person.id}`} passHref>
+                            {/* Botão de detalhes */}
+                            {/* <Link href={`/participante/${person.id}`} passHref>
                                 <button className="mt-4 px-4 py-2 text-sm font-bold rounded-full bg-brand-orange hover:bg-brand-orange/90 text-white transition-colors duration-300">
                                     Ver detalhes
                                 </button>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 ))}
