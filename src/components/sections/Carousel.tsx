@@ -30,7 +30,7 @@ export const people = [
         id: 3,
         name: "Alice Johnson",
         profession: "Pedagoga e Mestre em Educação Inclusiva",
-        image: "/images/speakers/afavicon.ico.png",
+        image: "/images/speakers/favicon.ico.png",
         description: `<p>Alice Johnson é pedagoga e mestre em Educação Inclusiva. Com mais de 15 anos de experiência em sala de aula, desenvolve metodologias inovadoras para a aprendizagem de alunos com necessidades especiais.</p>`,
         socialMedia: [
             { platform: "linkedin", url: "https://linkedin.com/in/alicej" },
