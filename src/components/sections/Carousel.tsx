@@ -31,7 +31,7 @@ export const people = [
         id: 3,
         name: "Alice Johnson",
         profession: "Pedagoga e Mestre em Educação Inclusiva",
-        image: "/images/speakers/alice.jpeg",
+        image: "/images/speakers/afavicon.ico.png",
         description: `<p>Alice Johnson é pedagoga e mestre em Educação Inclusiva. Com mais de 15 anos de experiência em sala de aula, desenvolve metodologias inovadoras para a aprendizagem de alunos com necessidades especiais.</p>`,
         socialMedia: [
             { platform: "linkedin", url: "https://linkedin.com/in/alicej" },
@@ -41,7 +41,7 @@ export const people = [
         id: 4,
         name: "Bob Brown",
         profession: "Terapeuta Ocupacional",
-        image: "/images/speakers/bob.jpeg",
+        image: "/images/speakers/favicon.ico.png",
         description: `<p>Bob Brown é terapeuta ocupacional e especialista em integração sensorial. Seu trabalho visa promover a autonomia e participação em atividades diárias para pessoas de todas as idades, com foco em desenvolvimento infantil.</p>`,
         socialMedia: [
             { platform: "website", url: "https://bobbrowntherapy.com" },
