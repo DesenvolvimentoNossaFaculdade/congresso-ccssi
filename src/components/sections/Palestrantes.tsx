@@ -1,10 +1,9 @@
-// src/components/sections/StaticImageSection.tsx
 'use client';
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link'; // Importado para o botão 'Ver detalhes'
-import { PlusCircle } from 'lucide-react'; // Ícone para o botão
+import Link from 'next/link';
+import { PlusCircle } from 'lucide-react';
 
 interface ImageItem {
   src: string;
@@ -63,7 +62,7 @@ export default function StaticImageSection({
           {images.map((image, index) => (
             <div 
               key={index} 
-              className="relative w-full aspect-square overflow-hidden shadow-xl group rounded-lg border border-accent-yellow/50" // ✅ Adicionado estilo de card do carrossel
+              className="relative w-full aspect-square overflow-hidden shadow-xl group rounded-lg border border-accent-yellow/50" 
             >
               {/* Imagem */}
               <Image
@@ -71,15 +70,13 @@ export default function StaticImageSection({
                 alt={image.alt}
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover transition-transform duration-300 transform group-hover:scale-110" // Escala no hover
+                className="object-cover transition-transform duration-300 transform group-hover:scale-110"
                 loading="lazy"
               />
               
-              {/* ✅ NOVO: Overlay que aparece no hover, estilo do carrossel */}
               <div className="absolute inset-0 bg-primary-dark/80 backdrop-blur-sm flex flex-col items-center justify-center p-4 text-center transition-all duration-300 opacity-0 group-hover:opacity-100 cursor-pointer">
                 <h3 className="text-xl font-bold text-accent-yellow drop-shadow mb-2">{image.title}</h3>
                 <p className="text-sm text-white/90">{image.description}</p>
-                {/* Botão de exemplo que aparece no hover */}
                 <Link href="#" passHref>
                   <button className="mt-4 px-4 py-2 text-sm font-bold rounded-full bg-brand-orange hover:bg-brand-orange/90 text-white transition-all duration-300 transform opacity-0 group-hover:opacity-100">
                     Ver detalhes
