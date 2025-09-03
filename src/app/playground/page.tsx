@@ -1,17 +1,12 @@
-'use client'; // Este componente é um Client Component para permitir interatividade
+'use client';
 
 import React from 'react';
-import Link from 'next/link'; // Para navegação de volta à home ou admin
+import Link from 'next/link';
 
 
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Label } from '@/components/ui/label';
-// import { Checkbox } from '@/components/ui/checkbox';
-// import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-// import { Textarea } from '@/components/ui/textarea';
-// import { Switch } from '@/components/ui/switch';
 
 
 export default function ComponentPlaygroundPage() {
@@ -37,10 +32,6 @@ export default function ComponentPlaygroundPage() {
                     Textes e Estilização de components
                 </h2>
 
-                {/* ==================================================================== */}
-                {/*  CONSTRUÇÃO DE COMPONENTES A PARTIR DAQUI */}
-                {/* ==================================================================== */}
-
                 
                 <div className="flex flex-col gap-4">
                     <h3 className="text-xl font-medium text-white">Botões</h3>
@@ -55,7 +46,6 @@ export default function ComponentPlaygroundPage() {
                 </div>
 
 
-                
                 
                 <div className="flex flex-col gap-4">
                     <h3 className="text-xl font-medium text-white">Inputs</h3>
