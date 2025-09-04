@@ -28,7 +28,7 @@ export const people = [
     },
     {
         id: 3,
-        name: "Em breve",
+        name: "Em breve...",
         profession: "",
         image: "/images/speakers/favicon.ico.png",
         description: `<p></p>`,

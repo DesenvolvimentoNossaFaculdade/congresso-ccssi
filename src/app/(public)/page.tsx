@@ -8,6 +8,7 @@ import Evento from '@/components/sections/Evento';
 import HeadlineHorizontalLoop from '@/components/sections/HeadlineHorizontalLoop';
 import Local from '@/components/sections/Local';
 import Carousel from '@/components/sections/Carousel';
+import Programacao from "@/components/sections/Programacao";
 import Lead from '@/components/sections/Lead';
 import Kit from '@/components/sections/Kit';
 import Faq from '@/components/sections/Faq';
@@ -30,6 +31,7 @@ export default function PublicHomePage() {
                 <div className="relative z-20">
                     <Carousel />
                     <Local />
+                    <Programacao />
                     <CNPSection />
                     <Kit />
                     <Lead />
