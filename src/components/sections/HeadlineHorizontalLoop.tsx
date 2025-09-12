@@ -11,7 +11,7 @@ interface HeadlineLoopProps {
 }
 
 export default function HeadlineHorizontalLoop({
-    texts = ['DIA 23 E 24 DE OUTUBRO DE 2025', 'DIA 23 E 24 DE OUTUBRO DE 2025', 'DIA 23 E 24 DE OUTUBRO DE 2025' , 'DIA 23 E 24 DE OUTUBRO DE 2025' , 'DIA 23 E 24 DE OUTUBRO DE 2025'],
+    texts = ['DIA 24 E 25 DE OUTUBRO DE 2025', 'DIA 24 E 25 DE OUTUBRO DE 2025', 'DIA 24 E 25 DE OUTUBRO DE 2025' , 'DIA 24 E 25 DE OUTUBRO DE 2025' , 'DIA 24 E 25 DE OUTUBRO DE 2025'],
     speed = 'normal',
     customDuration,
     showSparkles = true,
