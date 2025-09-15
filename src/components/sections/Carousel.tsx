@@ -95,7 +95,6 @@ export default function SpeakersGrid() {
                             loading="lazy"
                         />
                         
-                        <div className="absolute inset-0 bg-white/30 backdrop-blur-md transition-opacity duration-500 group-hover:opacity-0 rounded-xl z-10" />
 
                         <div className="absolute bottom-0 w-full bg-gradient-to-t from-primary-dark/80 to-transparent p-4 text-center z-20 flex flex-col items-center justify-end h-full transition-opacity duration-500 opacity-0 group-hover:opacity-100">
                             <h3 className="text-white font-semibold text-xl mb-2 text-balance">{person.name}</h3>
