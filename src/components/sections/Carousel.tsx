@@ -8,32 +8,30 @@ import { FaInstagram, FaLinkedin, FaTwitter, FaGlobe } from 'react-icons/fa';
 export const people = [
     {
         id: 1,
-        name: "Em breve...",
-        profession: "",
-        image: "/images/speakers/favicon.ico.png",
-        description: `<p></p>`,
+        name: "CIDA BEZERRA",
+        profession: "PSICANALISTA",
+        image: "/images/speakers/cida-bezerra.jpg",
+        description: `<p>MENTORA E ANALISTA CORPORAL</p>`,
         socialMedia: [
-            { platform: "instagram", url: "#" },
+            
         ],
     },
     {
         id: 2,
-        name: "Em breve...",
-        profession: "",
-        image: "/images/speakers/favicon.ico.png",
+        name: "Emanuela Jamacarú",
+        profession: "PSICOPEDAGOGA E TERAPEUTA ABA",
+        image: "/images/speakers/emanuela-jamacaru.jpg",
         description: `<p></p>`,
         socialMedia: [
-            { platform: "instagram", url: "#" },
         ],
     },
     {
         id: 3,
-        name: "Em breve...",
-        profession: "",
-        image: "/images/speakers/favicon.ico.png",
+        name: "Patrícia Santos",
+        profession: "Escritora e Psicóloga ABA, TCC e Neuropsicologia",
+        image: "/images/speakers/patricia-santos.png",
         description: `<p></p>`,
         socialMedia: [
-            { platform: "linkedin", url: "#" },
         ],
     },
     {
