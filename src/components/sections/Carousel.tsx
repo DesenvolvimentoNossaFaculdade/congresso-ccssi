@@ -8,7 +8,7 @@ import { FaInstagram, FaLinkedin, FaTwitter, FaGlobe } from 'react-icons/fa';
 export const people = [
     {
         id: 1,
-        name: "CIDA BEZERRA",
+        name: "Cida Bezerra",
         profession: "PSICANALISTA",
         image: "/images/speakers/cida-bezerra.jpg",
         description: `<p>MENTORA E ANALISTA CORPORAL</p>`,
