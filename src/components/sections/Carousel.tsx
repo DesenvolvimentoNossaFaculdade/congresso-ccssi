@@ -11,7 +11,7 @@ export const people = [
         name: "Cida Bezerra",
         profession: "PSICANALISTA",
         image: "/images/speakers/cida-bezerra.jpg",
-        description: `<p>MENTORA E ANALISTA CORPORAL</p>`,
+        description: `<p>PSICANALISTA, MENTORA E ANALISTA CORPORAL</p>`,
         socialMedia: [
             
         ],
