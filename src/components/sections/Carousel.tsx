@@ -29,7 +29,7 @@ export const people = [
         id: 3,
         name: "Patrícia Santos",
         profession: "Escritora e Psicóloga ABA, TCC e Neuropsicologia",
-        image: "/images/speakers/patricia-santos.png",
+        image: "/images/speakers/patricia-santos.jpg",
         description: `<p></p>`,
         socialMedia: [
         ],
