@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CheckCircle } from 'lucide-react';
-import { IngressoItem } from '@/data/ingressos'; 
+import { IngressoItem } from '@/data/ingresso'; 
 
 interface TicketCardProps {
   item: IngressoItem;
