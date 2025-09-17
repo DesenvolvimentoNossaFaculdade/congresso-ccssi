@@ -24,7 +24,7 @@ export default function Lead({
         { icon: CheckCircle, text: 'Associação com inovação e impacto social' },
     ],
     buttonText = 'Entrar em contato',
-    whatsappLink = 'https://wa.me/55889999139972',
+    whatsappLink = 'https://wa.me/558896300725',
 }: LeadProps) {
     return (
         <section
