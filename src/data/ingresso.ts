@@ -42,7 +42,7 @@ export const ingressos: IngressoItem[] = [
     id: 'somente-professore-CNP',
     title: 'Ingresso exclusivo para professores CNP',
     preco: 'R$ 00,00',
-    parcelas: '-',
+    parcelas: 'Gratis',
     benefits: ['Acesso a dois dias de evento', 'Certificado de participação', 'Welcome kit'],
     logoSrc: '/images/LogoSimbolo.png',
     symplaLink: 'https://www.conapro.org/professor/criar'

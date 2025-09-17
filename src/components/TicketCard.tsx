@@ -9,7 +9,7 @@ interface TicketCardProps{
     whatsappLink?: string;
 }
 
-export default function TicketCard({ item, whatsappLink = 'https://wa.me/5588994377675' }: TicketCardProps) {
+export default function TicketCard({ item, whatsappLink = 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154?_gl=1*ty4lem*_gcl_au*MTUzNzI2MzY0Mi4xNzU4MDQ1MDc4*_ga*MTMwNjYxODE5OC4xNzU4MDQ1MDc4*_ga_KXH10SQTZF*czE3NTgwNDUwNzckbzEkZzEkdDE3NTgwNDU0NjYkajYwJGwwJGg0NzA4ODIzMjc' }: TicketCardProps) {
     return(
         <div
             className="flex flex-col justify-between w-full sm:w-[45%] md:w-[22%] rounded-2xl p-6 border border-accent-yellow/50 bg-primary-dark/70 backdrop-blur-xl shadow-xl text-center transition-transform hover:scale-105 transform hover:-translate-y-2 relative z-10"
