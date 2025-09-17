@@ -1,5 +1,3 @@
-// src/data/ingressos.ts
-
 export interface IngressoItem {
   id: string;
   title: string;
@@ -18,7 +16,7 @@ export const ingressos: IngressoItem[] = [
     parcelas: 'em até 12x',
     benefits: ['Acesso a dois dias de evento', 'Certificado de participação', 'Welcome kit'],
     logoSrc: '/images/LogoSimbolo.png',
-    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154?_gl=1*ty4lem*_gcl_au*MTUzNzI2MzY0Mi4xNzU4MDQ1MDc4*_ga*MTMwNjYxODE5OC4xNzU4MDQ1MDc4*_ga_KXH10SQTZF*czE3NTgwNDUwNzckbzEkZzEkdDE3NTgwNDU0NjYkajYwJGwwJGg0NzA4ODIzMjc'
+    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154'
   },
   {
     id: 'passaporte-meia-lote-0',
@@ -27,25 +25,24 @@ export const ingressos: IngressoItem[] = [
     parcelas: 'em até 12x',
     benefits: ['Acesso a dois dias de evento', 'Certificado de participação', 'Welcome kit'],
     logoSrc: '/images/LogoSimbolo.png',
-    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154?_gl=1*ty4lem*_gcl_au*MTUzNzI2MzY0Mi4xNzU4MDQ1MDc4*_ga*MTMwNjYxODE5OC4xNzU4MDQ1MDc4*_ga_KXH10SQTZF*czE3NTgwNDUwNzckbzEkZzEkdDE3NTgwNDU0NjYkajYwJGwwJGg0NzA4ODIzMjc'
+    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154'
   },
   {
-    id: 'somente-palestras-lote-0',
+    id: 'ingresso-coletivo-lote-0',
     title: 'Ingresso Coletivo',
     preco: 'R$ 99,99',
     parcelas: 'em até 12x',
     benefits: ['Acesso a dois dias de evento', 'Certificado de participação', 'Welcome kit'],
     logoSrc: '/images/LogoSimbolo.png',
-    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154?_gl=1*ty4lem*_gcl_au*MTUzNzI2MzY0Mi4xNzU4MDQ1MDc4*_ga*MTMwNjYxODE5OC4xNzU4MDQ1MDc4*_ga_KXH10SQTZF*czE3NTgwNDUwNzckbzEkZzEkdDE3NTgwNDU0NjYkajYwJGwwJGg0NzA4ODIzMjc'
+    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154'
   },
   {
-    id: 'somente-professore-CNP',
+    id: 'professores-cnp',
     title: 'Ingresso exclusivo para professores CNP',
-    preco: 'R$ 00,00',
-    parcelas: 'Gratis',
+    preco: 'Gratuito',
+    parcelas: null,
     benefits: ['Acesso a dois dias de evento', 'Certificado de participação', 'Welcome kit'],
     logoSrc: '/images/LogoSimbolo.png',
     symplaLink: 'https://www.conapro.org/professor/criar'
   },
-
 ];
