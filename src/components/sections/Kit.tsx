@@ -7,7 +7,7 @@ import {ingressos} from '@/data/ingresso';
 export default function Kit() {
     return (
         <section
-            id="ingressos"
+            id="kit"
             className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 py-12 md:py-20 bg-transparent shadow-lg font-raleway"
             aria-labelledby="ingressos-section-title"
         >

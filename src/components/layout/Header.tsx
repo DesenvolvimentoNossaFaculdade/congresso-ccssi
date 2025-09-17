@@ -11,7 +11,7 @@ const navItems = [
     {name: 'Sobre', href: '/#aboutus', isAnchor: true},
     {name: 'Palestrantes', href: '/#speakers', isAnchor: true},
     {name: 'FAQ', href: '/#faq', isAnchor: true},
-    {name: 'Ingressos', href: '/ingressos', isAnchor: false, isPrimary: true},
+    {name: 'Passaportes', href: '/#kit', isAnchor: true, isPrimary: true},
 ];
 
 export default function Header() {
