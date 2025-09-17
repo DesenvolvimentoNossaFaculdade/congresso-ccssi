@@ -37,7 +37,7 @@ export const ingressos: IngressoItem[] = [
     symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154'
   },
   {
-    id: 'professores-cnp',
+    id: 'somente-professore-CNP',
     title: 'Ingresso exclusivo para professores CNP',
     preco: 'Gratuito',
     parcelas: null,
