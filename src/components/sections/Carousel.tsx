@@ -20,7 +20,7 @@ export const people = [
         id: 2,
         name: "Emanuela Jamacarú",
         profession: "PSICOPEDAGOGA E TERAPEUTA ABA",
-        image: "/images/speakers/emanuela-jamacaru.jpg",
+        image: "/images/speakers/emanuela-jamacaru.jpeg",
         description: `<p></p>`,
         socialMedia: [
         ],

@@ -126,7 +126,7 @@ export default function Programacao() {
                                 activeTab === 'dayOne' ? 'bg-orange-500 text-white shadow-lg' : 'text-gray-300 hover:bg-gray-700'
                             }`}
                         >
-                            Dia 23/10
+                            Dia 24/10
                         </button>
                         <button
                             onClick={() => setActiveTab('dayTwo')}
@@ -134,7 +134,7 @@ export default function Programacao() {
                                 activeTab === 'dayTwo' ? 'bg-orange-500 text-white shadow-lg' : 'text-gray-300 hover:bg-gray-700'
                             }`}
                         >
-                            Dia 24/10
+                            Dia 25/10
                         </button>
                     </div>
                 </div>

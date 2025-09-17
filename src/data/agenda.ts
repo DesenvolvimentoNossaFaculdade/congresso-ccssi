@@ -42,7 +42,7 @@ export const agenda: AgendaItem[] = [
         name: 'Antony Lemos',
         role: 'Especialista Front-End',
         company: 'Magalu - Luiza Labs',
-        image: '', // URL externa
+        image: '',
         },
     },
     {
