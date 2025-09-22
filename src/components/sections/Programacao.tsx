@@ -83,14 +83,14 @@ const Timeline = ({ items }: { items: ScheduleItem[] }) => {
                     </span>
                     <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-gray-700 hover:border-orange-500 transition-colors duration-300">
                         <time className="block mb-2 text-sm font-normal leading-none text-orange-400">{item.time}</time>
-                        <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-                        {item.description && <p className="mt-2 text-base font-normal text-gray-400">{item.description}</p>}
+                        <h3 className="text-xl font-semibold text-black">{item.title}</h3>
+                        {item.description && <p className="mt-2 text-base font-normal text-black">{item.description}</p>}
                         {item.workshops && (
                             <div className="mt-4 space-y-4">
                                 {item.workshops.map((ws, wsIndex) => (
                                     <div key={wsIndex} className="p-4 bg-gray-700/50 rounded-md border-l-4 border-orange-600">
                                         <h4 className="font-bold text-orange-300">{ws.title}</h4>
-                                        <p className="text-gray-300 text-sm">{ws.description}</p>
+                                        <p className="text-black text-sm">{ws.description}</p>
                                     </div>
                                 ))}
                             </div>
@@ -113,7 +113,7 @@ export default function Programacao() {
                     <h2 className="text-4xl font-extrabold text-orange-500 sm:text-5xl drop-shadow-md">
                         Programação Completa
                     </h2>
-                    <p className="mt-4 text-xl text-gray-300">
+                    <p className="mt-4 text-xl text-black">
                         Confira a programação do 1º Congresso Caririense de Saúde Integrada.
                     </p>
                 </div>

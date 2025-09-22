@@ -76,7 +76,7 @@ export default function CNPSection({
                 <h2 id="cnp-title" className="text-3xl sm:text-4xl font-bold text-gabigol-orange drop-shadow-md">
                     {title}
                 </h2>
-                <div className="text-lg text-gray-300 space-y-4 leading-relaxed text-balance">
+                <div className="text-lg text-black space-y-4 leading-relaxed text-balance">
                     <p>
                         O <strong className="text-gabigol-orange">Congresso Caririense de Saúde Integrada (CCSI)</strong> {introParagraph1.split('—')[0]}—{introParagraph1.split('—')[1]}
                     </p>

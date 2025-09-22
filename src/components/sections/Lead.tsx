@@ -41,15 +41,15 @@ export default function Lead({
                         {title}
                     </h2>
 
-                    <p className="text-white text-lg mb-4 max-w-prose">
+                    <p className="text-black text-lg mb-4 max-w-prose">
                         {introText}
                     </p>
 
                     {benefits.length > 0 && (
-                    <ul className="text-white text-left w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 mb-8"> 
+                    <ul className="text-black text-left w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 mb-8"> 
                         {benefits.map((benefit, index) => (
                         <li key={index} className="flex flex-col items-center text-center gap-2 font-semibold text-lg md:text-xl p-4 bg-white/10 rounded-lg shadow-md border border-accent-yellow/30 text-balance">
-                            <benefit.icon className="w-8 h-8 text-accent-yellow mb-2" aria-hidden="true" />
+                            <benefit.icon className="w-8 h-8 text-blackls mb-2" aria-hidden="true" />
                             <span>{benefit.text}</span>
                         </li>
                         ))}

@@ -93,7 +93,7 @@ export default function Header() {
                     <button
                         key={item.name}
                         onClick={() => handleAnchor(item.href)}
-                        className={`text-sm font-semibold text-white px-3 py-2 rounded transition duration-200 ease-in-out
+                        className={`text-sm font-semibold text-black px-3 py-2 rounded transition duration-200 ease-in-out
                         ${item.isPrimary ? 'bg-orange-600 hover:bg-orange-700 shadow-md' : 'hover:bg-orange-800'}
                         `}
                         aria-label={`Navegar para a seção ${item.name}`}

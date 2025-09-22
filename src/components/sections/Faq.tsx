@@ -23,7 +23,7 @@ export default function Faq() {
             >
                 F.A.Q
             </h2>
-            <p className="text-xl text-white/80 mb-10 text-center font-raleway">
+            <p className="text-xl text-black mb-10 text-center font-raleway">
                 Perguntas Frequentes
             </p>
 

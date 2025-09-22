@@ -17,7 +17,7 @@ export default function FaqAccordionItem({ item, isOpen, toggle }: FaqAccordionI
             
             <button
                 onClick={toggle}
-                className="flex items-center justify-between w-full px-4 py-3 font-medium text-left text-white hover:bg-primary-dark/80 transition-all duration-300"
+                className="flex items-center justify-between w-full px-4 py-3 font-medium text-left text-black hover:bg-primary-dark/80 transition-all duration-300"
                 aria-expanded={isOpen}
                 aria-controls={`faq-answer-${item.id}`}
                 id={`faq-question-${item.id}`}
@@ -36,7 +36,7 @@ export default function FaqAccordionItem({ item, isOpen, toggle }: FaqAccordionI
                             id={`faq-answer-${item.id}`}
                             role="region"
                             aria-labelledby={`faq-question-${item.id}`}
-                            className="px-4 py-3 text-white/90 bg-primary-dark/50 backdrop-blur-sm border-t border-orange-400/30 transition-all duration-300"
+                            className="px-4 py-3 text-black bg-primary-dark/50 backdrop-blur-sm border-t border-orange-400/30 transition-all duration-300"
                         >
                             {item.answer}
                         </div>

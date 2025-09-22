@@ -52,11 +52,11 @@ export default function Local({
                     <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4">
                         <h3
                             id="local-title"
-                            className="text-3xl sm:text-4xl font-bold text-white drop-shadow"
+                            className="text-3xl sm:text-4xl font-bold text-black drop-shadow"
                         >
                             {title}
                         </h3>
-                        <p className="text-base sm:text-lg text-white/90 flex items-center gap-2">
+                        <p className="text-base sm:text-lg text-black flex items-center gap-2">
                             <MapPin className="w-5 h-5 text-accent-yellow" aria-hidden="true" />
                             {address}
                         </p>

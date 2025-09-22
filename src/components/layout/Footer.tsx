@@ -6,7 +6,7 @@ export default function Footer(){
 
 
     return(
-        <footer className="bg-[#5F4235] text-gray-300 text-sm boder-t border-yellow-300 px-4 py-8 w-full"
+        <footer className="bg-[#5F4235] text-black text-sm boder-t border-yellow-300 px-4 py-8 w-full"
             aria-labelledby="footer-heading"
         >
             <h2 id="footer-heading" className="sr-only">Informações do Rodapé</h2>
