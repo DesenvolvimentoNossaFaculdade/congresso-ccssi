@@ -42,6 +42,12 @@ const defaultImages: ImageItem[] = [
     title: 'Networking',
     description: 'Um espaço para troca de experiências e conexões valiosas entre os participantes.',
   },
+  {
+    src: '/images/gallery/image-4.jpg',
+    alt: 'Participantes conversando em um coffee break do congresso',
+    title: 'Networking',
+    description: 'Um espaço para troca de experiências e conexões valiosas entre os participantes.',
+  },
 ];
 
 export default function StaticImageSection({

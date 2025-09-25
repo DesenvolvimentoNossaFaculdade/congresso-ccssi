@@ -2,14 +2,20 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { FaInstagram, FaLinkedin, FaTwitter, FaGlobe } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaTwitter, FaGlobe, FaChevronLeft,  FaChevronRight} from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, A11y } from 'swiper/modules';
+import { useRef, useEffect, useState } from 'react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 
 export const people = [
     {
         id: 1,
         name: "Cida Bezerra",
-        profession: "PSICANALISTA",
+        profession: "Psicanalista, Mentora e Analista corporal",
         image: "/images/speakers/cida-bezerra.jpg",
         description: `<p>PSICANALISTA, MENTORA E ANALISTA CORPORAL</p>`,
         socialMedia: [
@@ -19,7 +25,7 @@ export const people = [
     {
         id: 2,
         name: "Emanuela Jamacarú",
-        profession: "PSICOPEDAGOGA E TERAPEUTA ABA",
+        profession: "Psicopedagoga e Terapeuta ABA",
         image: "/images/speakers/emanuela-jamacaru.jpeg",
         description: `<p></p>`,
         socialMedia: [
@@ -36,12 +42,29 @@ export const people = [
     },
     {
         id: 4,
-        name: "Em breve...",
-        profession: "",
-        image: "/images/speakers/favicon.ico.png",
+        name: "Brenda Cristina Bezerra",
+        profession: "Psicóloga com atuação clínica em psicologia infantil. Especialista em ABA, Saúde Mental e Neuropsicologia",
+        image: "/images/speakers/brenda-cristina.jpeg",
         description: `<p></p>`,
         socialMedia: [
-            { platform: "website", url: "#" },
+        ],
+    },
+    {
+        id: 5,
+        name: "Ilma Gabriely Ribeiro Franco",
+        profession: "Terapeuta Ocupacional pós-graduada em Autismo, Tecnologia Assistiva e Reabilitação Visual",
+        image: "/images/speakers/ilma-gabriely.jpg",
+        description: `<p></p>`,
+        socialMedia: [
+        ],
+    },
+    {
+        id: 6,
+        name: "Leticia Nascimento",
+        profession: "Terapeuta Ocupacional - Especialista em TCC na infância e na adolescência, ABA e Seletividade Alimentar",
+        image: "/images/speakers/leticia-nascimento.jpeg",
+        description: `<p></p>`,
+        socialMedia: [
         ],
     },
 ];
@@ -61,87 +84,129 @@ const getSocialIcon = (platform: string) => {
     }
 };
 
-export default function SpeakersGrid() {
-    const sectionBackgroundImage = '/images/images/bg-site_01.jpg';
-    
-    return (
-        <section
-            id="speakers"
-            className="w-full min-h-screen flex flex-col items-center justify-center py-16 px-4 relative shadow-lg carousel-bg font-raleway"
-            aria-labelledby="speakers-title"
-        >
-            <div className="absolute inset-0 bg-black/40 backdrop-brightness-75 z-0"></div> 
-            
-            <h2
-                id="speakers-title"
-                className="relative z-20 text-gabigol-orange text-4xl sm:text-5xl font-bold mb-12 text-center drop-shadow-md"
+export default function SpeakersCarousel() {
+  const sectionBackgroundImage = '/images/images/bg-site_01.jpg';
+
+  const prevRef = useRef<HTMLDivElement | null>(null);
+  const nextRef = useRef<HTMLDivElement | null>(null);
+
+  const [isNavReady, setIsNavReady] = useState(false);
+
+  // Espera o DOM montar para ativar os botões
+  useEffect(() => {
+    setIsNavReady(true);
+  }, []);
+
+  return (
+    <section
+      id="speakers"
+      className="w-full min-h-screen flex flex-col items-center justify-center py-16 px-4 relative shadow-lg carousel-bg font-raleway"
+    >
+      <div className="absolute inset-0 bg-black/40 backdrop-brightness-75 z-0" />
+
+      <h2 className="relative z-20 text-gabigol-orange text-4xl sm:text-5xl font-bold mb-12 text-center drop-shadow-md">
+        Palestrantes:
+      </h2>
+
+    <div className="relative z-20 w-full max-w-6xl mx-auto overflow-visible">
+        {isNavReady && (
+          <Swiper
+            modules={[Navigation, Pagination, A11y]}
+            spaceBetween={30}
+            slidesPerView={1}
+            loop={true}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            onSwiper={(swiper) => {
+              // Faz os botões funcionarem após render
+              // @ts-ignore
+              swiper.params.navigation.prevEl = prevRef.current;
+              // @ts-ignore
+              swiper.params.navigation.nextEl = nextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }}
+          >
+            {people.map((person) => (
+              <SwiperSlide key={person.id}>
+                <div className="relative w-full h-[400px] overflow-hidden shadow-lg transition-all duration-500 ease-in-out rounded-xl group border border-accent-yellow">
+                  <Image
+                    src={person.image}
+                    alt={person.name}
+                    fill
+                    sizes="(max-width: 640px) 90vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover rounded-xl transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+
+                  <div className="absolute bottom-0 w-full bg-gradient-to-t from-primary-dark/80 to-transparent p-4 text-center z-20 flex flex-col items-center justify-end h-full transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+                    <h3 className="text-white font-semibold text-xl mb-2 text-balance">
+                      {person.name}
+                    </h3>
+                    <p className="text-white/90 text-sm">{person.profession}</p>
+
+                    {person.socialMedia && person.socialMedia.length > 0 && (
+                      <div className="flex gap-4 mt-4">
+                        {person.socialMedia.map((social, idx) => (
+                          <a
+                            key={idx}
+                            href={social.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-brand-orange transition-colors"
+                            aria-label={`Link para ${social.platform} de ${person.name}`}
+                          >
+                            {getSocialIcon(social.platform)}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+
+            {/* Botões personalizados */}
+            <div
+                ref={prevRef}
+                className="swiper-button-custom absolute top-1/2 left-2 transform -translate-y-1/2 z-30 cursor-pointer bg-white/90 text-black hover:bg-black hover:text-white transition-all p-2 rounded-full shadow-md"
             >
-                Palestrantes:
-            </h2>
-
-            <div className="relative z-20 w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
-                {people.map((person) => (
-                    <div
-                        key={person.id}
-                        className="relative w-72 h-[400px] overflow-hidden shadow-lg transition-all duration-500 ease-in-out rounded-xl group border border-accent-yellow"
-                    >
-                        {/* Imagem */}
-                        <Image
-                            src={person.image}
-                            alt={person.name}
-                            fill
-                            sizes="(max-width: 640px) 90vw, (max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
-                            className="object-cover rounded-xl transition-transform duration-500 group-hover:scale-110"
-                            loading="lazy"
-                        />
-                        
-
-                        <div className="absolute bottom-0 w-full bg-gradient-to-t from-primary-dark/80 to-transparent p-4 text-center z-20 flex flex-col items-center justify-end h-full transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-                            <h3 className="text-white font-semibold text-xl mb-2 text-balance">{person.name}</h3>
-                            <p className="text-white/90 text-sm">{person.profession}</p>
-                            
-                            {person.socialMedia && person.socialMedia.length > 0 && (
-                                <div className="flex gap-4 mt-4">
-                                    {person.socialMedia.map((social, idx) => (
-                                        <a
-                                            key={idx}
-                                            href={social.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-white hover:text-brand-orange transition-colors"
-                                            aria-label={`Link para ${social.platform} de ${person.name}`}
-                                        >
-                                            {getSocialIcon(social.platform)}
-                                        </a>
-                                    ))}
-                                </div>
-                            )}
-
-                            {/* Botão de detalhes */}
-                            {/* <Link href={`/participante/${person.id}`} passHref>
-                                <button className="mt-4 px-4 py-2 text-sm font-bold rounded-full bg-brand-orange hover:bg-brand-orange/90 text-white transition-colors duration-300">
-                                    Ver detalhes
-                                </button>
-                            </Link> */}
-                        </div>
-                    </div>
-                ))}
+              <FaChevronLeft size={20} />
             </div>
-            
-            <style jsx>{`
-                .carousel-bg {
-                    background-image: url('${sectionBackgroundImage}');
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-attachment: fixed;
-                    background-position: center center;
-                }
-                @media (max-width: 767px) {
-                    .carousel-bg {
-                        background-position: right center;
-                    }
-                }
-            `}</style>
-        </section>
-    );
+           <div
+                ref={nextRef}
+                className="swiper-button-custom absolute top-1/2 right-2 transform -translate-y-1/2 z-30 cursor-pointer bg-white/90 text-black hover:bg-black hover:text-white transition-all p-2 rounded-full shadow-md"
+            >
+              <FaChevronRight size={20} />
+            </div>
+          </Swiper>
+        )}
+      </div>
+
+      {/* Estilo de fundo */}
+      <style jsx>{`
+        .carousel-bg {
+          background-image: url('${sectionBackgroundImage}');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center center;
+        }
+
+        @media (max-width: 767px) {
+          .carousel-bg {
+            background-position: right center;
+          }
+        }
+      `}</style>
+    </section>
+  );
 }
