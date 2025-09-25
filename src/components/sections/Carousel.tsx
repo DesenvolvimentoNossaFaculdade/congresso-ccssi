@@ -127,9 +127,9 @@ export default function SpeakersCarousel() {
             }}
             onSwiper={(swiper) => {
               // Faz os botões funcionarem após render
-              // @ts-ignore
+              // @ts-expect-error: Swiper navigation refs precisam ser setadas manualmente após init
               swiper.params.navigation.prevEl = prevRef.current;
-              // @ts-ignore
+              // @ts-expect-error: Swiper navigation refs precisam ser setadas manualmente após init
               swiper.params.navigation.nextEl = nextRef.current;
               swiper.navigation.init();
               swiper.navigation.update();

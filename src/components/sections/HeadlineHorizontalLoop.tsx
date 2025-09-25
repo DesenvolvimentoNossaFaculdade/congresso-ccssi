@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Sparkles } from 'lucide-react';
 
 interface HeadlineLoopProps {
     texts?: string[];
@@ -14,7 +13,6 @@ export default function HeadlineHorizontalLoop({
     texts = ['DIA 24 E 25 DE OUTUBRO DE 2025', 'DIA 24 E 25 DE OUTUBRO DE 2025', 'DIA 24 E 25 DE OUTUBRO DE 2025' , 'DIA 24 E 25 DE OUTUBRO DE 2025' , 'DIA 24 E 25 DE OUTUBRO DE 2025'],
     speed = 'normal',
     customDuration,
-    showSparkles = true,
 }: HeadlineLoopProps) {
     const animationDurationMap = {
         slow: '20s',
