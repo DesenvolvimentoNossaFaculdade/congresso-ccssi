@@ -10,8 +10,22 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+type SocialMedia = {
+  platform: 'linkedin' | 'twitter' | 'website' | 'instagram';
+  url: string;
+}
 
-export const people = [
+type Person = {
+  id: number;
+  name: string;
+  profession: string;
+  image: string;
+  description: string;
+  socialMedia: SocialMedia[];
+}
+
+
+export const people: Person[] = [
     {
         id: 1,
         name: "Cida Bezerra",
