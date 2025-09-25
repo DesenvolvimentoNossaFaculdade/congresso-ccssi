@@ -18,9 +18,7 @@ export const people = [
         profession: "Psicanalista, Mentora e Analista corporal",
         image: "/images/speakers/cida-bezerra.jpg",
         description: `<p>PSICANALISTA, MENTORA E ANALISTA CORPORAL</p>`,
-        socialMedia: [
-            
-        ],
+        socialMedia: [],
     },
     {
         id: 2,
@@ -28,8 +26,7 @@ export const people = [
         profession: "Psicopedagoga e Terapeuta ABA",
         image: "/images/speakers/emanuela-jamacaru.jpeg",
         description: `<p></p>`,
-        socialMedia: [
-        ],
+        socialMedia: [],
     },
     {
         id: 3,
@@ -37,8 +34,7 @@ export const people = [
         profession: "Escritora e Psicóloga ABA, TCC e Neuropsicologia",
         image: "/images/speakers/patricia-santos.jpg",
         description: `<p></p>`,
-        socialMedia: [
-        ],
+        socialMedia: [],
     },
     {
         id: 4,
@@ -46,8 +42,7 @@ export const people = [
         profession: "Psicóloga com atuação clínica em psicologia infantil. Especialista em ABA, Saúde Mental e Neuropsicologia",
         image: "/images/speakers/brenda-cristina.jpeg",
         description: `<p></p>`,
-        socialMedia: [
-        ],
+        socialMedia: [],
     },
     {
         id: 5,
@@ -55,8 +50,7 @@ export const people = [
         profession: "Terapeuta Ocupacional pós-graduada em Autismo, Tecnologia Assistiva e Reabilitação Visual",
         image: "/images/speakers/ilma-gabriely.jpg",
         description: `<p></p>`,
-        socialMedia: [
-        ],
+        socialMedia: [],
     },
     {
         id: 6,
@@ -64,8 +58,7 @@ export const people = [
         profession: "Terapeuta Ocupacional - Especialista em TCC na infância e na adolescência, ABA e Seletividade Alimentar",
         image: "/images/speakers/leticia-nascimento.jpeg",
         description: `<p></p>`,
-        socialMedia: [
-        ],
+        socialMedia: [],
     },
 ];
 
