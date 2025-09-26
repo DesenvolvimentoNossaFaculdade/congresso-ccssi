@@ -11,15 +11,16 @@ interface TicketCardProps {
 export default function TicketCard({ item }: TicketCardProps) { 
   return (
     <div
-      className="flex flex-col justify-between w-full sm:w-[45%] md:w-[22%] rounded-2xl p-6 border border-accent-yellow/50 bg-primary-dark/70 backdrop-blur-xl shadow-xl text-center transition-transform hover:scale-105 transform hover:-translate-y-2 relative z-10"
+      className="flex flex-col justify-between w-full sm:w-[45%] md:w-[22%] rounded-2xl p-6 border border-accent-yellow/50 bg-primary-dark/70 backdrop-blur-xl shadow-xl text-center transition-transform hover:scale-105 transform hover:-translate-y-2 relative z-10
+      items-center sm:items-stretch sm:text-left"
     >
       <div>
         {item.logoSrc && (
           <Image
             src={item.logoSrc}
             alt={`Logo do ${item.title}`}
-            width={80}
-            height={80}
+            width={200}
+            height={200}
             className="w-60 h-50 mx-auto mb-4 drop-shadow-lg object-contain"
             loading="lazy"
           />

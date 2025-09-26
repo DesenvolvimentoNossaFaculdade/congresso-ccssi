@@ -76,7 +76,7 @@ export default function Header() {
                 
                 {!isGlass && (
                     <Image
-                    src="/images/simbolo.png" 
+                    src="/images/LogoSimbolo.png" 
                     alt="Logo do CCSI 2025"
                     width={70}
                     height={70}
