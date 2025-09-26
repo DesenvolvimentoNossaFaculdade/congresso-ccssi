@@ -34,67 +34,86 @@ export default function CNPSection({
     buttonLogoAlt = "Logo do CNP",
 }: CNPSectionProps) {
     return (
-    <section 
-        id="cnp-section" 
-        className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-transparent text-white flex justify-center items-center relative z-10 font-raleway shadow-lg"
-        aria-labelledby="cnp-title"
-    >
-        <div 
-            className="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center justify-center gap-12 
-                        bg-black/30 p-4 rounded-sm shadow-xl backdrop-blur-md" 
+        <section 
+            id="cnp-section" 
+            className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-transparent text-white flex justify-center items-center relative z-10 font-raleway shadow-lg"
+            aria-labelledby="cnp-title"
         >
-            
-            
-            <div className="w-full md:w-2/5 flex flex-col justify-center items-center flex-shrink-0">
-                <Image
-                    src={cnpLogoSrc} 
-                    alt={cnpLogoAlt} 
-                    width={800} 
-                    height={800} 
-                    className="w-full max-w-[800px] md:max-w-[1000px] h-auto object-contain drop-shadow-xl rounded-lg"
-                    loading="lazy"
-                />
-                
-                <Link href={buttonLink} passHref>
-                    <button 
-                        className="px-8 py-3 bg-brand-orange text-white text-lg font-bold rounded-full shadow-lg hover:bg-brand-orange/90 transition-transform duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2
-                                flex items-center justify-center gap-2"
-                    >
-                        <Image
-                            src={buttonLogoSrc}
-                            alt={buttonLogoAlt}
-                            width={50} 
-                            height={50} 
-                            className="object-contain"
-                        />
-                        <span>{buttonText}</span>
-                    </button>
-                </Link>
-            </div>
+            <div 
+                className="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center justify-center gap-12 
+                            bg-black/30 p-4 rounded-sm shadow-xl backdrop-blur-md" 
+            >
+                {/* Bloco da imagem com botão visível apenas no desktop */}
+                <div className="w-full md:w-2/5 flex flex-col justify-center items-center flex-shrink-0">
+                    <Image
+                        src={cnpLogoSrc} 
+                        alt={cnpLogoAlt} 
+                        width={800} 
+                        height={800} 
+                        className="w-full max-w-[800px] md:max-w-[1000px] h-auto object-contain drop-shadow-xl rounded-lg"
+                        loading="lazy"
+                    />
 
-            <div className="w-full md:w-3/5 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-6 text-balance">
-                <h2 id="cnp-title" className="text-3xl sm:text-4xl font-bold text-gabigol-orange drop-shadow-md">
-                    {title}
-                </h2>
-                <div className="text-lg text-black space-y-4 leading-relaxed text-balance">
-                    <p>
-                        O <strong className="text-gabigol-orange">Congresso Caririense de Saúde Integrada (CCSI)</strong> {introParagraph1.split('—')[0]}—{introParagraph1.split('—')[1]}
-                    </p>
-                    <p>
-                        O <strong className="text-gabigol-orange">CNP</strong> {introParagraph2.split('—')[0]}
-                    </p>
-                    <p>
-                        Ao realizar o <strong className="text-gabigol-orange">CCSI</strong>, {introParagraph3.split('—')[0]}
-                    </p>
-                    <p className="font-semibold text-gabigol-orange">
-                        {callToActionPhrase}
-                    </p>
-                    <p>
-                        {finalParagraph}
-                    </p>
+                    {/* BOTÃO - visível somente no desktop */}
+                    <Link href={buttonLink} passHref className="hidden md:block mt-6">
+                        <button 
+                            className="px-8 py-3 bg-brand-orange text-white text-lg font-bold rounded-full shadow-lg hover:bg-brand-orange/90 transition-transform duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2
+                                    flex items-center justify-center gap-2"
+                        >
+                            <Image
+                                src={buttonLogoSrc}
+                                alt={buttonLogoAlt}
+                                width={50} 
+                                height={50} 
+                                className="object-contain"
+                            />
+                            <span>{buttonText}</span>
+                        </button>
+                    </Link>
+                </div>
+
+                {/* Bloco de texto com botão visível apenas no mobile */}
+                <div className="w-full md:w-3/5 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-6 text-balance">
+                    <h2 id="cnp-title" className="text-3xl sm:text-4xl font-bold text-gabigol-orange drop-shadow-md">
+                        {title}
+                    </h2>
+                    <div className="text-lg text-white md:text-black space-y-4 leading-relaxed text-balance">
+                        <p>
+                            O <strong className="text-gabigol-orange">Congresso Caririense de Saúde Integrada (CCSI)</strong> {introParagraph1.split('—')[0]}—{introParagraph1.split('—')[1]}
+                        </p>
+                        <p>
+                            O <strong className="text-gabigol-orange">CNP</strong> {introParagraph2.split('—')[0]}
+                        </p>
+                        <p>
+                            Ao realizar o <strong className="text-gabigol-orange">CCSI</strong>, {introParagraph3.split('—')[0]}
+                        </p>
+                        <p className="font-semibold text-gabigol-orange">
+                            {callToActionPhrase}
+                        </p>
+                        <p>
+                            {finalParagraph}
+                        </p>
+
+                        {/* BOTÃO - visível somente no mobile */}
+                        <div className="block md:hidden flex justify-center">
+                            <Link href={buttonLink} passHref>
+                                <button 
+                                    className="mt-4 px-8 py-3 bg-brand-orange text-white text-lg font-bold rounded-full shadow-lg hover:bg-brand-orange/90 transition-transform duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2 flex items-center justify-center gap-2"
+                                >
+                                    <Image
+                                        src={buttonLogoSrc}
+                                        alt={buttonLogoAlt}
+                                        width={50} 
+                                        height={50} 
+                                        className="object-contain"
+                                    />
+                                    <span>{buttonText}</span>
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         </section>
     );
 }
