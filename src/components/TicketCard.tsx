@@ -20,7 +20,7 @@ export default function TicketCard({ item }: TicketCardProps) {
             alt={`Logo do ${item.title}`}
             width={80}
             height={80}
-            className="w-20 h-20 mx-auto mb-4 drop-shadow-lg object-contain"
+            className="w-60 h-40 mx-auto mb-4 drop-shadow-lg object-contain"
             loading="lazy"
           />
         )}

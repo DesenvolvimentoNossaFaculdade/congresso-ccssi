@@ -19,7 +19,7 @@ export default function Footer(){
                 
                 <div className="md:w-auto flex-shrink-0 order-1 md:order-2">
                     <Image
-                        src="/images/simbolo.png"
+                        src="/images/LogoSimbolo.png"
                         alt="Logotipo do Congresso Caririense de Saúde Integrada, TEA, TOD e TDAH"
                         width={144}
                         height={50}
