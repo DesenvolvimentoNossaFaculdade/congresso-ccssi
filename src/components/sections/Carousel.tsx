@@ -152,7 +152,7 @@ export default function SpeakersCarousel() {
           >
             {people.map((person) => (
               <SwiperSlide key={person.id}>
-                <div className="relative w-full h-[400px] overflow-hidden shadow-lg transition-all duration-500 ease-in-out rounded-xl group border border-accent-yellow">
+                <div className="relative w-full h-[400px] overflow-hidden from-primary-dark/45 shadow-lg transition-all duration-500 ease-in-out rounded-xl group border border-accent-yellow">
                   <Image
                     src={person.image}
                     alt={person.name}
@@ -162,11 +162,11 @@ export default function SpeakersCarousel() {
                     loading="lazy"
                   />
 
-                  <div className="absolute bottom-0 w-full bg-gradient-to-t from-primary-dark/80 to-transparent p-4 text-center z-20 flex flex-col items-center justify-end h-full transition-opacity duration-500 opacity-100 md:opacity-0 md:group-hover:opacity-100">
-                    <h3 className="text-white font-semibold text-xl mb-2 text-balance">
+                  <div className="absolute bottom-0 w-full bg-gradient-to-t from-primary-dark/70 to-transparent p-4 text-center z-20 flex flex-col items-center justify-end h-full opacity-100">
+                    <h3 className="text-black font-semibold text- text-xl mb-5 text-balance" style={{ textShadow: '0 2px 8px white' }}>
                       {person.name}
                     </h3>
-                    <p className="text-white/90 text-sm">{person.profession}</p>
+                    <p className="text-black mb-5 text-sm font-bold text-balance" style={{ textShadow: '1px 1px 6px white' }}>{person.profession}</p>
 
                     {person.socialMedia && person.socialMedia.length > 0 && (
                       <div className="flex gap-4 mt-4">
