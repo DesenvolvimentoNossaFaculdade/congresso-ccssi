@@ -66,6 +66,22 @@ export const people: Person[] = [
         description: `<p></p>`,
         socialMedia: [],
     },
+    {
+        id: 6,
+        name: "Alêudo Alves Coelho",
+        profession: "Enfermeiro, Terapeuta Holístico e mestrando em Ciências da Saúde",
+        image: "/images/speakers/aleudo-alves-coelho.jpeg",
+        description: `<p></p>`,
+        socialMedia: [],
+    },
+    {
+        id: 7,
+        name: "Isadora Nascimento",
+        profession: "Musicoterapeuta com ênfase no Transtorno do Espectro Autista em crianças e adolescente",
+        image: "/images/speakers/isadora-nascimento.jpeg",
+        description: `<p></p>`,
+        socialMedia: [],
+    },
 ];
 
 const getSocialIcon = (platform: string) => {
