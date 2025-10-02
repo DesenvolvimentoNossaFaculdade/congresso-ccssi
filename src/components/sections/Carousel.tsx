@@ -82,6 +82,46 @@ export const people: Person[] = [
         description: `<p></p>`,
         socialMedia: [],
     },
+    {
+        id: 8,
+        name: "Ana Munisso",
+        profession: "Psicopedagoga Clínica, especialista em Neuropsicopedagogia e Gestão Escolar",
+        image: "/images/speakers/ana-munisso.jpeg",
+        description: `<p></p>`,
+        socialMedia: [],
+    },
+    {
+        id: 9,
+        name: "Amanda Santiago",
+        profession: "Fisioterapeuta Pediátrica Especialista em TEA e Psicomotricidade",
+        image: "/images/speakers/amanda-santiago.jpeg",
+        description: `<p></p>`,
+        socialMedia: [],
+    },
+    {
+        id: 10,
+        name: "Genner Barbosa",
+        profession: "Médico do adolescente com pós graduação em Terapia Cognitivo-Comportamental",
+        image: "/images/speakers/genner-barbosa.jpeg",
+        description: `<p></p>`,
+        socialMedia: [],
+    },
+    {
+        id: 11,
+        name: "Dr. Dennysson",
+        profession: "Psiquiatra da infância e adolescência",
+        image: "/images/speakers/dennysson.jpeg",
+        description: `<p></p>`,
+        socialMedia: [],
+    },
+    {
+        id: 12,
+        name: "Elizângela Matias",
+        profession: "Neuropsicopedagoga e professora com atuação clínica e escolar",
+        image: "/images/speakers/elizangela-matias.jpeg",
+        description: `<p></p>`,
+        socialMedia: [],
+    },
 ];
 
 const getSocialIcon = (platform: string) => {
@@ -162,7 +202,7 @@ export default function SpeakersCarousel() {
                     loading="lazy"
                   />
 
-                  <div className="absolute bottom-0 w-full bg-gradient-to-t from-primary-dark/70 to-transparent p-4 text-center z-20 flex flex-col items-center justify-end h-full opacity-100">
+                  <div className="absolute bottom-0 w-full bg-gradient-to-t  to-transparent p-4 text-center z-20 flex flex-col items-center justify-end h-full opacity-100">
                     <h3 className="text-black font-semibold text- text-xl mb-5 text-balance" style={{ textShadow: '0 2px 8px white' }}>
                       {person.name}
                     </h3>
