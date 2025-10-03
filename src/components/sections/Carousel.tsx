@@ -126,7 +126,7 @@ export const people: Person[] = [
         id: 13,
         name: "Dr. Adalberto Cruz Sampaio",
         profession: "Neuropediatra, especialista em Neurodesenvolvimento",
-        image: "/images/speakers/adalberto-cruz.jpg",
+        image: "/images/speakers/adalberto-cruz.png",
         description: `<p></p>`,
         socialMedia: [],
     },
