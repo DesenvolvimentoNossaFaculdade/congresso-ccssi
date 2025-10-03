@@ -25,7 +25,7 @@ export default function CNPSection({
     title = "Realização: Conselho Nacional de Professores (CNP)",
     introParagraph1 = " é uma iniciativa do Conselho Nacional de Professores (CNP) — órgão responsável pelo cadastro e regulamentação dos professores em todo o Brasil.",
     introParagraph2 = "O CNP tem como missão promover a valorização e o reconhecimento da classe docente, contribuindo para a qualificação dos profissionais da educação e para a garantia de uma educação de qualidade em todo o país.",
-    introParagraph3 = "Ao realizar o CCSI, o Conselho reafirma seu compromisso com uma formação interdisciplinar, humana e alinhada às necessidades contemporâneas das nossas comunidades.",
+    introParagraph3 = "o Conselho reafirma seu compromisso com uma formação interdisciplinar, humana e alinhada às necessidades contemporâneas das nossas comunidades.",
     callToActionPhrase = "Faça parte dessa rede!",
     finalParagraph = "Se você é professor ou atua na área da educação, cadastre-se no CNP e una-se a milhares de profissionais comprometidos com o futuro da educação no Brasil.",
     buttonText = "Cadastre-se agora",
@@ -74,23 +74,23 @@ export default function CNPSection({
 
                 {/* Bloco de texto com botão visível apenas no mobile */}
                 <div className="w-full md:w-3/5 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-6 text-balance">
-                    <h2 id="cnp-title" className="text-3xl sm:text-4xl font-bold text-gabigol-orange drop-shadow-md">
+                    <h2 id="cnp-title" className="text-center text-3xl sm:text-4xl font-bold text-gabigol-orange drop-shadow-md text-balance">
                         {title}
                     </h2>
-                    <div className="text-lg text-white md:text-black space-y-4 leading-relaxed text-balance">
-                        <p>
+                    <div className=" p-5 text-justify text-lg text-white md:text-black space-y-4 leading-relaxed text-balance">
+                        <p className='tracking-tight'>
                             O <strong className="text-gabigol-orange">Congresso Caririense de Saúde Integrada (CCSI)</strong> {introParagraph1.split('—')[0]}—{introParagraph1.split('—')[1]}
                         </p>
-                        <p>
+                        <p className='tracking-tight'>
                             O <strong className="text-gabigol-orange">CNP</strong> {introParagraph2.split('—')[0]}
                         </p>
-                        <p>
-                            Ao realizar o <strong className="text-gabigol-orange">CCSI</strong>, {introParagraph3.split('—')[0]}
+                        <p className='tracking-tight'>
+                            Ao realizar o <strong className="text-gabigol-orange tracking-tight">CCSI</strong>, {introParagraph3.split('—')[0]}
                         </p>
-                        <p className="font-semibold text-gabigol-orange">
+                        <p className="font-semibold text-gabigol-orange ">
                             {callToActionPhrase}
                         </p>
-                        <p>
+                        <p className='tracking-tight'>
                             {finalParagraph}
                         </p>
 
