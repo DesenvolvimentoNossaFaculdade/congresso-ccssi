@@ -39,6 +39,9 @@ const demoVoguer = localFont({
 export const metadata: Metadata = {
   title: "Congresso Caririense de Saúde Integrada",
   description: "Conhecer para incluir: práticas e reflexões sobre o neurodesenvolvimento no Cariri.",
+  icons: {
+    icon: "/images/ico/icone.ico", 
+  },
 };
 
 export default function RootLayout({
