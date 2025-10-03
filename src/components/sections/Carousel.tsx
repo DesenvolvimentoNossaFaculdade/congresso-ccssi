@@ -122,14 +122,7 @@ export const people: Person[] = [
         description: `<p></p>`,
         socialMedia: [],
     },
-    {
-        id: 13,
-        name: "Dr. Adalberto Cruz Sampaio",
-        profession: "Neuropediatra, especialista em Neurodesenvolvimento",
-        image: "/images/speakers/adalberto-cruz.jpg",
-        description: `<p></p>`,
-        socialMedia: [],
-    },
+   
 ];
 
 const getSocialIcon = (platform: string) => {
