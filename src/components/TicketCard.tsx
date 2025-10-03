@@ -51,7 +51,7 @@ export default function TicketCard({ item }: TicketCardProps) {
         href={item.symplaLink} 
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 inline-block w-full bg-brand-orange text-white font-semibold py-3 px-4 rounded-full hover:bg-brand-orange/90 shadow-md hover:shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2"
+        className="mt-6 inline-block w-full bg-brand-orange text-white text-center font-semibold py-3 px-4 rounded-full hover:bg-brand-orange/90 shadow-md hover:shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2"
         aria-label={`Adquirir ingresso para ${item.title}`} 
       >
         {item.id === 'somente-professore-CNP' ? 'Inscreva-se' : 'Adquira já'}
