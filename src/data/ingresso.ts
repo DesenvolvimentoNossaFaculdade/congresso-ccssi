@@ -29,7 +29,7 @@ export const ingressos: IngressoItem[] = [
   },
   {
     id: 'ingresso-coletivo-lote-0',
-    title: 'Ingresso Coletivo',
+    title: 'Passaporte Coletivo',
     preco: 'R$ 99,99',
     parcelas: 'em até 12x',
     benefits: ['Acesso aos dois dias de evento', 'Certificado de participação', 'Welcome kit', 'Participação em sorteios', 'Networking qualificado'],
@@ -38,7 +38,7 @@ export const ingressos: IngressoItem[] = [
   },
   {
     id: 'somente-professore-CNP',
-    title: 'Ingresso exclusivo para professores CNP',
+    title: 'Passaporte exclusivo para professores CNP',
     preco: 'Gratuito',
     parcelas: null,
     benefits: ['Acesso aos dois dias de evento', 'Certificado de participação', 'Welcome kit', 'Participação em sorteios', 'Networking qualificado'],
