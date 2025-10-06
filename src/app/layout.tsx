@@ -52,12 +52,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        {/* Script do Pixel do Meta (Facebook Pixel) */}
-        <FacebookPixel/>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${arsenica.variable} ${demoVoguer.variable} antialiased`}
       >
+         {/* Script do Pixel do Meta (Facebook Pixel) */}
+        <FacebookPixel/>
+        
         <div className="relative min-h-screen">
           <div className="absolute inset-0 bg-black/10 z-10 mx-auto"></div>
           <div className="relative z-20">

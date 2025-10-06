@@ -4,6 +4,10 @@ import { useEffect } from 'react';
 
 export function FacebookPixel() {
   useEffect(() => {
+
+    const pixelId = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
+
+
     if (document.getElementById("fb-pixel-script")) return;
 
     const script = document.createElement("script");
@@ -21,7 +25,7 @@ export function FacebookPixel() {
         s.parentNode.insertBefore(t,s)
       }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
       
-      fbq('init', '1318812019641102'); 
+      fbq('init', '${pixelId}'); 
       fbq('track', 'PageView');
     `;
     document.head.appendChild(script);
@@ -32,5 +36,5 @@ export function FacebookPixel() {
     };
   }, []);
 
-  return null; // Não renderiza nada visualmente
+  return null;
 }
