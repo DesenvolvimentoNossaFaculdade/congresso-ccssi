@@ -6,6 +6,11 @@ export function FacebookPixel() {
   useEffect(() => {
     const pixelId = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
 
+    if (!pixelId) {
+      console.warn("NEXT_PUBLIC_FB_PIXEL_ID is not set");
+      return;
+    }
+
     if (document.getElementById("fb-pixel-script")) return;
 
     const script = document.createElement("script");
@@ -22,7 +27,7 @@ export function FacebookPixel() {
         t.src=v;
         s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)
-      }(window, document,'script','/api/track');
+      }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
       
       fbq('init', '${pixelId}'); 
       fbq('track', 'PageView');

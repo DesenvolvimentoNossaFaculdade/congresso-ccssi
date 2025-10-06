@@ -2,10 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://www.congressocariri.com.br/' 
+  'https://www.congressocariri.com.br' 
 ];
 
-// Handler GET (Proxy para fbevents.js)
 export async function GET(req: NextRequest) {
   const origin = req.headers.get('origin') || '';
 
