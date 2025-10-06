@@ -57,7 +57,7 @@ const { trackEvent } = usePixel();
       content_name: `Item ${itemId}`,
       content_ids: [itemId],
     });
-  }
+  };
 
   return (
     <>
