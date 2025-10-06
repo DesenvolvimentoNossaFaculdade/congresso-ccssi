@@ -4,14 +4,13 @@ import { useEffect } from 'react';
 
 export function FacebookPixel() {
   useEffect(() => {
-
     const pixelId = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
-
 
     if (document.getElementById("fb-pixel-script")) return;
 
     const script = document.createElement("script");
     script.id = "fb-pixel-script";
+
     script.innerHTML = `
       !function(f,b,e,v,n,t,s) {
         if(f.fbq)return;
@@ -23,11 +22,12 @@ export function FacebookPixel() {
         t.src=v;
         s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)
-      }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      }(window, document,'script','/api/track');
       
       fbq('init', '${pixelId}'); 
       fbq('track', 'PageView');
     `;
+
     document.head.appendChild(script);
 
     return () => {
