@@ -1,4 +1,4 @@
-// components/sections/Kit.tsx
+
 'use client';
 
 import React from 'react';

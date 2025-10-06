@@ -9,8 +9,8 @@ interface PixelEventParams {
 }
 
 export const usePixel = () => {
-  const trackEvent = useCallback((eventName: string, params?: PixelEventParams) => {
-    if (window.fbq) {
+  const trackEvent = useCallback((eventName: PixelEventName, params?: PixelEventParams) => {
+    if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', eventName, params);
     } else {
       console.warn("Facebook Pixel não está carregado corretamente.");
@@ -19,5 +19,3 @@ export const usePixel = () => {
 
   return { trackEvent };
 };
-
-export default usePixel;
