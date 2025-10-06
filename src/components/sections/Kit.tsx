@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -7,7 +6,7 @@ import { ingressos } from '@/data/ingresso';
 import { usePixel } from '@/hooks/usePixel';
 
 interface KitProps {
-  onKitClick: (itemId: string) => void;  // Tipagem da função onKitClick
+  onKitClick: (itemId: string) => void;  
 }
 
 const Kit: React.FC<KitProps> = ({ onKitClick }) => {
