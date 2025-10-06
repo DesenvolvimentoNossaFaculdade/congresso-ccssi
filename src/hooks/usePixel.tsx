@@ -2,8 +2,10 @@
 
 import { useCallback } from 'react';
 
+type PixelEventName = 'PageView' | 'AddToCart' | 'Purchase' | 'onKitClick';
+
 interface PixelEventParams {
-  [key: string]: any;
+  [key: string]: string | number | string[] | undefined;
 }
 
 export const usePixel = () => {
