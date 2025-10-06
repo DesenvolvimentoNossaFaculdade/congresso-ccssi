@@ -4,7 +4,6 @@ import { useCallback } from 'react';
 
 type PixelEventName = 'PageView' | 'AddToCart' | 'Purchase' | 'onKitClick' | 'TicketSelected';
 
-
 interface PixelEventParams {
   [key: string]: string | number | string[] | undefined;
 }
