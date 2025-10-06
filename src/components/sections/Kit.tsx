@@ -17,7 +17,6 @@ const Kit: React.FC<KitProps> = ({ onKitClick }) => {
       ticketId: ticketId,
     });
     
-    // Chama a função onKitClick que foi passada como prop
     onKitClick(ticketId);
   };
 
@@ -40,7 +39,7 @@ const Kit: React.FC<KitProps> = ({ onKitClick }) => {
           <TicketCard
             key={item.id}
             item={item}
-            onClick={() => trackTicketSelection(item.id)}  // Passa o ID diretamente para o rastreamento
+            onClick={() => trackTicketSelection(item.id)} 
           />
         ))}
       </div>

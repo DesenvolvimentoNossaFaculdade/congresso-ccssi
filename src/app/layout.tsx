@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Raleway } from "next/font/google";
 import localFont from "next/font/local";
+import { FacebookPixel } from "@/components/FacebookPixel";
 import "./globals.css";
 //import { createTables } from "@/lib/db";
 
@@ -52,7 +53,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         {/* Script do Pixel do Meta (Facebook Pixel) */}
-
+        <FacebookPixel/>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${arsenica.variable} ${demoVoguer.variable} antialiased`}
