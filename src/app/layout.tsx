@@ -35,7 +35,6 @@ const demoVoguer = localFont({
   display: "swap",
 });
 
-
 export const metadata: Metadata = {
   title: "Congresso Caririense de Saúde Integrada",
   description: "Conhecer para incluir: práticas e reflexões sobre o neurodesenvolvimento no Cariri.",
@@ -51,15 +50,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        {/* Script do Pixel do Meta (Facebook Pixel) */}
+
+      </head>
       <body
-          className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${arsenica.variable} ${demoVoguer.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${arsenica.variable} ${demoVoguer.variable} antialiased`}
       >
         <div className="relative min-h-screen">
-
           <div className="absolute inset-0 bg-black/10 z-10 mx-auto"></div>
-
           <div className="relative z-20">
-            {children} 
+            {children}
           </div>
         </div>
       </body>

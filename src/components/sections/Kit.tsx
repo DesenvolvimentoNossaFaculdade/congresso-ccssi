@@ -1,31 +1,52 @@
+// components/sections/Kit.tsx
 'use client';
 
 import React from 'react';
 import TicketCard from '../TicketCard';
-import {ingressos} from '@/data/ingresso';
+import { ingressos } from '@/data/ingresso';
+import { usePixel } from '@/hooks/usePixel';
 
-export default function Kit() {
-    return (
-        <section
-            id="kit"
-            className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 py-12 md:py-20 bg-transparent shadow-lg font-raleway"
-            aria-labelledby="ingressos-section-title"
-        >
-
-            <h2
-                id="ingressos-section-title"
-                className="text-gabigol-orange text-4xl sm:text-5xl md:text-6xl font-extrabold mb-12 text-center drop-shadow-lg font-raleway"
-            >
-                Confira as opções de ingresso:
-            </h2>
-
-
-            {/** CONTAINER */}
-            <div className="w-full max-w-7xl flex flex-wrap justify-center gap-8 relative z-10">
-                {ingressos.map((item) => (
-                    <TicketCard key={item.id} item={item} />
-                ))}
-            </div>
-        </section>
-    );
+interface KitProps {
+  onKitClick: (itemId: string) => void;  // Tipagem da função onKitClick
 }
+
+const Kit: React.FC<KitProps> = ({ onKitClick }) => {
+  const { trackEvent } = usePixel(); 
+
+  const trackTicketSelection = (ticketId: string) => {
+    trackEvent('TicketSelected', {
+      ticketId: ticketId,
+    });
+    
+    // Chama a função onKitClick que foi passada como prop
+    onKitClick(ticketId);
+  };
+
+  return (
+    <section
+      id="kit"
+      className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 py-12 md:py-20 bg-transparent shadow-lg font-raleway"
+      aria-labelledby="ingressos-section-title"
+    >
+      <h2
+        id="ingressos-section-title"
+        className="text-gabigol-orange text-4xl sm:text-5xl md:text-6xl font-extrabold mb-12 text-center drop-shadow-lg font-raleway"
+      >
+        Confira as opções de ingresso:
+      </h2>
+
+      {/* CONTAINER */}
+      <div className="w-full max-w-7xl flex flex-wrap justify-center gap-8 relative z-10">
+        {ingressos.map((item) => (
+          <TicketCard
+            key={item.id}
+            item={item}
+            onClick={() => trackTicketSelection(item.id)}  // Passa o ID diretamente para o rastreamento
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Kit;

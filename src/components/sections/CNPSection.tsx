@@ -16,7 +16,7 @@ interface CNPSectionProps {
     buttonText?: string;
     buttonLink?: string;
     buttonLogoSrc?: string;
-    buttonLogoAlt?: string; 
+    buttonLogoAlt?: string;
 }
 
 export default function CNPSection({
@@ -99,6 +99,7 @@ export default function CNPSection({
                             <Link href={buttonLink} passHref>
                                 <button 
                                     className="mt-4 px-8 py-3 bg-brand-orange text-white text-lg font-bold rounded-full shadow-lg hover:bg-brand-orange/90 transition-transform duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:ring-offset-2 flex items-center justify-center gap-2"
+                                    
                                 >
                                     <Image
                                         src={buttonLogoSrc}

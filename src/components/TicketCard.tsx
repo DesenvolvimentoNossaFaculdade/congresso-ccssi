@@ -6,6 +6,7 @@ import { IngressoItem } from '@/data/ingresso';
 
 interface TicketCardProps {
   item: IngressoItem;
+  onClick: () => void;
 }
 
 export default function TicketCard({ item }: TicketCardProps) { 
