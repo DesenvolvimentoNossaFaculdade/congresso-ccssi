@@ -130,6 +130,14 @@ export const people: Person[] = [
         description: `<p></p>`,
         socialMedia: [],
     },
+    {
+        id: 14,
+        name: "Dra. Talita Miranda",
+        profession: "Psiquiatra; Pós-graduada em Psiquiatria e Psiquiatria da Infância e Adolescência",
+        image: "/images/speakers/talita-miranda.jpeg",
+        description: `<p></p>`,
+        socialMedia: [],
+    },
 ];
 
 const getSocialIcon = (platform: string) => {
