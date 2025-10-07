@@ -70,7 +70,7 @@ export const people: Person[] = [
         id: 6,
         name: "Aleudo Alves Coelho",
         profession: "Enfermeiro, Terapeuta Holístico e mestrando em Ciências da Saúde",
-        image: "/images/speakers/aleudo-alves-coelho.jpeg",
+        image: "/images/speakers/aleudo-alves-coelho.jpg",
         description: `<p></p>`,
         socialMedia: [],
     },
