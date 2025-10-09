@@ -43,7 +43,7 @@ const { trackEvent } = usePixel();
       <div className="relative z-20">
         <Carousel />
         <Local />
-        {/* <Programacao /> */}
+        <Programacao />
         <CNPSection/>
         <Kit onKitClick={handleKitClick}/>
         <Lead />
