@@ -78,7 +78,7 @@ const scheduleData: Record<string, ScheduleItem[]> = {
       time: '14:00',
       title: 'Intervenção do Terapeuta Ocupacional no TEA e suas comorbidades',
       type: 'palestra',
-      description: 'Ilma Gabriely Ribeiro Franco',
+      description: 'Palestra com Ilma Gabriely Ribeiro Franco',
     },
     {
       time: '15:00',
