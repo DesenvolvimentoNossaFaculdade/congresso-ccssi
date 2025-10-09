@@ -10,6 +10,7 @@ const navItems = [
     {name: 'Home', href: '/#banner', isAnchor: true},
     {name: 'Sobre', href: '/#aboutus', isAnchor: true},
     {name: 'Palestrantes', href: '/#speakers', isAnchor: true},
+    {name: 'Programação', href: '/#programacao', isAnchor: true},
     {name: 'FAQ', href: '/#faq', isAnchor: true},
     {name: 'Passaportes', href: '/#kit', isAnchor: true, isPrimary: true},
 ];

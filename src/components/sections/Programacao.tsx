@@ -1,4 +1,3 @@
-// src/components/sections/Programacao.tsx
 'use client';
 
 import { useState } from 'react';
@@ -38,7 +37,7 @@ const scheduleData: {
       description: 'Roda de conversa com Isadora Nascimento'
     },
     {
-      time: '20:30', // se quiser evitar duplicação de horário, pode ajustar
+      time: '20:30',
       title: 'Elane Galvão – aguardando conteúdo',
       type: 'palestra',
     },
@@ -133,9 +132,8 @@ const getIcon = (type: ScheduleItem['type']) => {
     case 'conversa':
       return <FaUsers className="text-white" />;
     case 'intervalo':
-      return <FaCoffee className="text-white" />;
     case 'almoco':
-      return <FaCoffee className="text-white" />; // ou outro ícone se quiser diferenciar almoço
+      return <FaCoffee className="text-white" />;
     case 'workshop':
       return <FaGraduationCap className="text-white" />;
     case 'abertura':
@@ -160,11 +158,19 @@ const Timeline = ({ items }: { items: ScheduleItem[] }) => {
           <span className="absolute -left-5 flex items-center justify-center w-10 h-10 bg-orange-500 rounded-full ring-8 ring-white/10">
             {getIcon(item.type)}
           </span>
-          <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-gray-700 hover:border-orange-500 transition-colors duration-300">
-            <time className="block mb-2 text-sm font-normal leading-none text-orange-400">
+          <div
+            className={`p-6 rounded-lg shadow-lg border transition-colors duration-300
+              ${item.type === 'palestra'
+                ? 'bg-orange-100 border-orange-400 hover:border-orange-500'
+                : 'bg-gray-800/80 border-gray-700 hover:border-orange-500'}`}
+          >
+            <time className="block mb-2 text-sm font-normal text-orange-400">
               {item.time}
             </time>
-            <h3 className="text-xl font-semibold text-black">{item.title}</h3>
+            <h3 className={`text-xl font-semibold 
+              ${item.type === 'palestra' ? 'text-orange-600' : 'text-black'}`}>
+              {item.title}
+            </h3>
             {item.description && (
               <p className="mt-2 text-base font-normal text-black">
                 {item.description}
@@ -194,7 +200,10 @@ export default function Programacao() {
   const [activeTab, setActiveTab] = useState<'2025-10-24' | '2025-10-25'>('2025-10-24');
 
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 font-raleway">
+    <section
+      className="relative py-20 px-4 sm:px-6 lg:px-8 font-raleway"
+      id="programacao"
+    >
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-orange-500 sm:text-5xl drop-shadow-md">
