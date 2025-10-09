@@ -32,13 +32,13 @@ const scheduleData: Record<string, ScheduleItem[]> = {
       time: '20:00',
       title: 'A atuação do Terapeuta Ocupacional no TEA e TOD',
       type: 'palestra',
-      description: 'Letícia Nascimento',
+      description: 'Palestra com Letícia Nascimento',
     },
     {
       time: '20:30',
       title: 'Experiências clínicas multidisciplinares: A importância da intervenção precoce nos transtornos do neurodesenvolvimento',
       type: 'conversa',
-      description: 'Roda de conversa com profissionais de diversas áreas sobre intervenção precoce.',
+      description: 'Roda de conversa',
       participants: [
         { name: 'Isadora Nascimento' },
         { name: 'Elane Galvão' },
@@ -53,25 +53,25 @@ const scheduleData: Record<string, ScheduleItem[]> = {
       time: '08:30',
       title: 'Crises nos transtornos do neurodesenvolvimento: prevenção, manejo e caminhos de inclusão',
       type: 'palestra',
-      description: 'Dra Talita Miranda',
+      description: 'Palestra com Dra Talita Miranda',
     },
     {
       time: '09:30',
       title: 'O processo de inclusão escolar entre a teoria e a prática: Vivências, desafios e superações',
       type: 'conversa',
-      description: 'Roda de conversa sobre inclusão escolar e suas realidades.',
+      description: 'Roda de conversa',
       participants: [
         { name: 'Hannah Nassif' },
         { name: 'Ana Munisso' },
         { name: 'Elizângela Matias' },
-        { name: 'Tia Manú / Emanuela Jamacarú Duarte da Silva' },
+        { name: 'Emanuela Jamacarú Duarte da Silva (Tia Manu)' },
       ],
     },
     {
       time: '11:00',
       title: 'Entre a adolescência e a vida adulta: O cuidado em jovens neurodivergentes',
       type: 'palestra',
-      description: 'Dr. Genner Barbosa',
+      description: 'Palestra com Dr. Genner Barbosa',
     },
     { time: '12:00', title: 'Intervalo', type: 'intervalo' },
     {
@@ -84,7 +84,7 @@ const scheduleData: Record<string, ScheduleItem[]> = {
       time: '15:00',
       title: 'Saúde mental e manejo de comorbidades de pessoas neurodivergentes: Avaliação/Intervenção ABA/psicomotoras e novas abordagens',
       type: 'conversa',
-      description: 'Discussão interdisciplinar sobre saúde mental e comorbidades.',
+      description: 'Roda de conversa',
       participants: [
         { name: 'Patrícia Santos' },
         { name: 'Amanda Santiago' },
@@ -96,7 +96,7 @@ const scheduleData: Record<string, ScheduleItem[]> = {
       time: '16:30',
       title: 'O preço do excesso: O impacto das telas no neurodesenvolvimento',
       type: 'palestra',
-      description: 'Dennysson',
+      description: 'Palestra com Dr. Dennysson Teles',
     },
   ],
 };
