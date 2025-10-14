@@ -138,6 +138,16 @@ export const people: Person[] = [
         description: `<p></p>`,
         socialMedia: [],
     },
+    {
+        id: 15,
+        name: "Elane Galvão",
+        profession: "Fonoaudióloga",
+        image: "/images/speakers/elaine-galvao.jpeg",
+        description: `<p></p>`,
+        socialMedia: [],
+    },
+
+
 ];
 
 const getSocialIcon = (platform: string) => {
