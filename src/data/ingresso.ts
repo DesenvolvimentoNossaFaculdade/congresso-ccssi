@@ -24,7 +24,7 @@ export const ingressos: IngressoItem[] = [
       'Networking qualificado'
     ],
     logoSrc: '/images/LogoSimbolo.png',
-    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154'
+    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154?token=b41ece7a5612cb482bc84abdcdf86c3c'
   },
   {
     id: 'passaporte-meia-lote-0',
