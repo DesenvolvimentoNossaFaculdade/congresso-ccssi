@@ -1,7 +1,8 @@
 export interface IngressoItem {
   id: string;
   title: string;
-  preco: string;
+  precoOriginal: string;
+  precoPromocional: string;
   parcelas: string | null;
   benefits: string[];
   logoSrc?: string;
@@ -12,37 +13,47 @@ export const ingressos: IngressoItem[] = [
   {
     id: 'passaporte-lote-0',
     title: 'Passaporte',
-    preco: 'R$ 247,00',
+    precoOriginal: 'R$ 247,00',
+    precoPromocional: 'R$ 99,90',
     parcelas: 'em até 12x',
-    benefits: ['Acesso aos dois dias de evento', 'Certificado de participação', 'Welcome kit', 'Participação em sorteios', 'Networking qualificado'],
+    benefits: [
+      'Acesso aos dois dias de evento',
+      'Certificado de participação',
+      'Welcome kit',
+      'Participação em sorteios',
+      'Networking qualificado'
+    ],
     logoSrc: '/images/LogoSimbolo.png',
     symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154'
   },
   {
     id: 'passaporte-meia-lote-0',
     title: 'Passaporte (meia-entrada)',
-    preco: 'R$ 123,50',
+    precoOriginal: 'R$ 123,50',
     parcelas: 'em até 12x',
     benefits: ['Acesso aos dois dias de evento', 'Certificado de participação', 'Welcome kit', 'Participação em sorteios', 'Networking qualificado'],
     logoSrc: '/images/LogoSimbolo.png',
-    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154'
+    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154',
+    precoPromocional: ""
   },
   {
     id: 'ingresso-coletivo-lote-0',
     title: 'Passaporte Coletivo',
-    preco: 'R$ 99,99',
+    precoOriginal: 'R$ 99,99',
     parcelas: 'em até 12x',
     benefits: ['Acesso aos dois dias de evento', 'Certificado de participação', 'Welcome kit', 'Participação em sorteios', 'Networking qualificado'],
     logoSrc: '/images/LogoSimbolo.png',
-    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154'
+    symplaLink: 'https://www.sympla.com.br/evento/i-congresso-caririense-de-saude-integrada/3027154',
+    precoPromocional: ""
   },
   {
     id: 'somente-professore-CNP',
     title: 'Passaporte exclusivo para professores CNP',
-    preco: 'Gratuito',
+    precoOriginal: 'Gratuito',
     parcelas: null,
     benefits: ['Acesso aos dois dias de evento', 'Certificado de participação', 'Welcome kit', 'Participação em sorteios', 'Networking qualificado'],
     logoSrc: '/images/LogoSimbolo.png',
-    symplaLink: 'https://www.conapro.org/professor/criar'
+    symplaLink: 'https://www.conapro.org/professor/criar',
+    precoPromocional: ""
   },
 ];
