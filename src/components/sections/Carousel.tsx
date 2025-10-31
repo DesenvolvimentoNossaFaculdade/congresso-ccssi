@@ -186,7 +186,7 @@ export default function SpeakersCarousel() {
       <div className="absolute inset-0 bg-black/40 backdrop-brightness-75 z-0" />
 
       <h2 className="relative z-20 text-gabigol-orange text-4xl sm:text-5xl font-bold mb-12 text-center drop-shadow-md">
-        Palestrantes:
+        palestrantes do CCSI 2025
       </h2>
 
     <div className="relative z-20 w-full max-w-6xl mx-auto overflow-visible">
